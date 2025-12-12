@@ -20,7 +20,7 @@
 
     <!-- NAV -->
     <nav class="w-full color-primary-green text-white p-4 flex justify-center gap-8 text-lg font-semibold">
-        <button onclick="showScreen('screen-csv')">📤 Carga CSV</button>
+        <button onclick="abrirModalAdmin()">📤 Carga CSV</button>
         <button onclick="showScreen('screen-add')">➕ Agregar Producto</button>
         <button onclick="showScreen('screen-list')">📦 Inventario</button>
         <button onclick="showScreen('screen-sales')">💰 Venta Ràpida</button>
@@ -111,21 +111,24 @@
             <div class="shadow-custom color-card-bg rounded-xl p-8">
                 <h2 class="text-2xl font-bold color-text-dark mb-4">📦 Inventario</h2>
         
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="border-b color-border">
-                            <th class="p-2">SKU</th>
-                            <th class="p-2">Nombre</th>
-                            <th class="p-2">Descripción</th>
-                            <th class="p-2">Stock Inicial</th>
-                            <th class="p-2">Stock Vendido</th>
-                            <th class="p-2">Precio</th>
-                            <th class="p-2">Imagen</th>
-                        </tr>
-                    </thead>
-                    <tbody id="inventory-table"></tbody>
-                </table>
-            </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b color-border">
+                                <th class="p-2">SKU</th>
+                                <th class="p-2">Nombre</th>
+                                <th class="p-2">Descripción</th>
+                                <th class="p-2">Stock Inicial</th>
+                                <th class="p-2">Stock Vendido</th>
+                                <th class="p-2">Precio</th>
+                                <th class="p-2">Imagen</th>
+                                <th class="p-2">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventory-table"></tbody>
+                    </table>
+                </div>
+                </div>
         </div>
         
 
@@ -204,6 +207,60 @@
     Confirmación
     </div>
 
+    <!-- MODAL DE EDITAR, BORRAR Y ELIMINAR PRODUCTO DE INVENTARIO -->
+    <div id="modal-editar-inventario" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="color-card-bg rounded-xl shadow-custom w-full max-w-lg p-6">
+            <h3 class="text-2xl font-bold color-text-dark mb-4 border-b color-border pb-3">✏️ Editar Producto: <span id="edit-sku-display" class="text-gray-600"></span></h3>
+            
+            <form id="form-editar-inventario" class="space-y-4">
+                <input type="hidden" id="edit-original-sku">
+                
+                <div>
+                    <label for="edit-sku" class="block text-sm font-medium text-gray-700">SKU</label>
+                    <input type="text" id="edit-sku" required
+                           class="mt-1 w-full p-3 border color-border rounded-lg focus:border-[#577161] focus:ring-1 focus:ring-[#577161] bg-gray-50 cursor-not-allowed" disabled>
+                </div>
+                
+                <div>
+                    <label for="edit-nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
+                    <input type="text" id="edit-nombre" required
+                           class="mt-1 w-full p-3 border color-border rounded-lg focus:border-[#577161] focus:ring-1 focus:ring-[#577161]">
+                </div>
+    
+                <div>
+                    <label for="edit-desc" class="block text-sm font-medium text-gray-700">Descripción</label>
+                    <textarea id="edit-desc" 
+                              class="mt-1 w-full p-3 border color-border rounded-lg focus:border-[#577161] focus:ring-1 focus:ring-[#577161]"></textarea>
+                </div>
+    
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="edit-stock" class="block text-sm font-medium text-gray-700">Stock Disponible</label>
+                        <input type="number" id="edit-stock" required min="0"
+                               class="mt-1 w-full p-3 border color-border rounded-lg focus:border-[#577161] focus:ring-1 focus:ring-[#577161]">
+                    </div>
+                    <div>
+                        <label for="edit-precio" class="block text-sm font-medium text-gray-700">Precio de Venta ($)</label>
+                        <input type="number" id="edit-precio" required step="0.01" min="0"
+                               class="mt-1 w-full p-3 border color-border rounded-lg focus:border-[#577161] focus:ring-1 focus:ring-[#577161]">
+                    </div>
+                </div>
+    
+                <div class="pt-4 flex justify-end space-x-3">
+                    <button type="button" onclick="cerrarModalEdicion()"
+                            class="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-100 transition duration-150">
+                        Cancelar
+                    </button>
+                    <button type="submit"
+                            class="px-4 py-2 color-primary-green text-white font-semibold rounded-lg hover:color-primary-hover transition duration-150">
+                        Guardar Cambios
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL DEL CLIENTE -->
     <div id="modal-cliente" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden items-center justify-center z-50">
         <div class="color-card-bg rounded-xl shadow-custom w-full max-w-md p-6">
             <h3 class="text-2xl font-bold color-text-dark mb-4 border-b color-border pb-3">👤 Datos del Cliente</h3>
@@ -243,12 +300,45 @@
         </div>
     </div>
 
+    <!-- MODAL DE AUTH -->
+    <div id="modal-admin-csv" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="color-card-bg rounded-xl shadow-custom w-full max-w-sm p-6">
+            <h3 class="text-2xl font-bold color-text-dark mb-4 border-b color-border pb-3">🔐 Acceso de Administrador</h3>
+            
+            <p class="text-gray-600 mb-4">Ingresa la contraseña para acceder a la carga de inventario CSV.</p>
+    
+            <form id="form-admin-csv" class="space-y-4">
+                <div>
+                    <label for="admin-password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                    <input type="password" id="admin-password" required
+                           class="mt-1 w-full p-3 border color-border rounded-lg focus:border-[#577161] focus:ring-1 focus:ring-[#577161]"
+                           placeholder="********">
+                </div>
+                
+                <p id="admin-error-message" class="text-red-500 text-sm hidden">Contraseña incorrecta. Inténtalo de nuevo.</p>
+    
+                <div class="pt-4 flex justify-end space-x-3">
+                    <button type="button" onclick="cerrarModalAdmin()"
+                            class="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-100 transition duration-150">
+                        Cancelar
+                    </button>
+                    <button type="submit"
+                            class="px-4 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition duration-150">
+                        Acceder
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- ************************* JS ************************* -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="app/app.js"></script>
     <script src="app/pantallaCsv/processCsv.js"></script>
     <script src="app/ventaRapida/salesQuick.js"></script>
     <script src="app/ventaRapida/clientData.js"></script>
+    <script src="app/admin/admin.js"></script>
+    <script src="app/inventory/tablaInventory.js"></script>
     <script src="app/addProductManual/addProduct.js"></script>
     <script src="app/addProductia/ia.js"></script>
 

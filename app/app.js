@@ -34,30 +34,6 @@ function showToast(message, type = 'success') {
     }).showToast();
 }
 
-/* ------ TABLA INVENTARIO ------ */
-function renderTable() {
-    const tbody = document.getElementById("inventory-table");
-    tbody.innerHTML = "";
-
-    inventory.forEach(item => {
-        const imageHtml = item.imagen 
-            ? `<img src="${item.imagen}" alt="${item.nombre}" class="w-12 h-12 object-cover rounded-md">`
-            : `<span class="text-gray-500 text-xs">No img</span>`;
-        tbody.innerHTML += `
-            <tr class="border-b color-border">
-                <td class="p-2">${item.sku}</td>
-                <td class="p-2">${item.nombre}</td>
-                <td class="p-2">${item.desc}</td>
-                <td class="p-2">${item.stock}</td>
-                <td class="p-2">${item.vendido}</td>
-                <td class="p-2">$${item.precio}</td>
-                <td class="p-2">${imageHtml}</td>
-            </tr>
-        `;
-    });
-}
-
-
 /* ------ CAJA DEL DÍA ------ */
 function renderSales() {
     // 1. Obtener el contenedor HTML
