@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArMaly Joyería - Inventario</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Toastify js -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <style>
+        .color-primary-green { background-color: #577161; }
+        .color-primary-hover { background-color: #3E4D45; }
+        .color-text-dark { color: #3C3231; }
+        .color-card-bg { background-color: #FFFFFF; }
+        .color-base-bg { background-color: #F7F7F7; }
+        .color-border { border-color: #E5E5E5; }
+
+        body { font-family: 'Inter', sans-serif; }
+        .shadow-custom {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08), 
+                        0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Botón archivo CSV */
+        #csv-file-input::-webkit-file-upload-button { visibility: hidden; }
+        #csv-file-input::before {
+            content: 'Seleccionar Archivo CSV';
+            display: inline-block;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #3C3231;
+        }
+        #csv-file-input:hover::before {
+            border-color: #577161;
+            background: #e9e9e9;
+        }
+
+        .screen { display: none; }
+        .active-screen { display: block; }
+        
+    </style>
+</head>
+
+<body class="color-base-bg min-h-screen">
+
+    <!-- NAV -->
+    <nav class="w-full color-primary-green text-white p-4 flex justify-center gap-8 text-lg font-semibold">
+        <button onclick="showScreen('screen-csv')">📤 Carga CSV</button>
+        <button onclick="showScreen('screen-add')">➕ Agregar Producto</button>
+        <button onclick="showScreen('screen-list')">📦 Inventario</button>
+        <button onclick="showScreen('screen-sales')">💰 Caja del Día</button>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="text-center py-10">
+        <h1 class="text-5xl font-bold color-text-dark">Inventario SKUs 🌿</h1>
+        <p class="text-gray-600 mt-2 text-lg">Gestión de stock Joyería ArMaly</p>
+    </header>
+
+    <!-- CONTENEDOR GENERAL -->
+    <section class="max-w-5xl mx-auto">
+
+        <!-- ********** 1. PANTALLA CSV ********** -->
+        <div id="screen-csv" class="screen active-screen">
+            <div class="shadow-custom color-card-bg rounded-xl p-8">
+                <h2 class="text-2xl font-bold color-text-dark mb-4">1. Carga de Inventario (.CSV)</h2>
+
+                <p class="mb-3 text-gray-700">
+                    Estructura requerida: <code>SKU, Nombre, Descripción Larga, Stock Inicial, Stock Vendido, Precio Venta</code>
+                </p>
+
+                <input type="file" id="csv-file-input" accept=".csv" class="w-full mb-4">
+
+                <button onclick="processCSV()"
+                        class="color-primary-green hover:color-primary-hover text-white font-semibold px-6 py-3 rounded-lg shadow-custom">
+                    Subir Inventario
+                </button>
+            </div>
+        </div>
+
+        <!-- ********** 2. AGREGAR PRODUCTO ********** -->
+        <div id="screen-add" class="screen">
+            <div class="shadow-custom color-card-bg rounded-xl p-8">
+                <h2 class="text-2xl font-bold color-text-dark mb-4">➕ Agregar Producto</h2>
+
+                <div class="grid grid-cols-1 gap-4">
+                    <input id="add-sku" class="border p-3 rounded" placeholder="SKU">
+                    <input id="add-nombre" class="border p-3 rounded" placeholder="Nombre del producto">
+                    <input id="add-desc" class="border p-3 rounded" placeholder="Descripción">
+                    <input id="add-stock" type="number" class="border p-3 rounded" placeholder="Stock Inicial">
+                    <input id="add-precio" type="number" class="border p-3 rounded" placeholder="Precio Venta">
+
+                    <label class="mt-3 font-semibold">Imagen del Producto:</label>
+                    <input type="file" id="add-imagen" accept="image/*" class="border p-3 rounded">
+                </div>
+
+                <button onclick="addProduct()"
+                        class="mt-5 color-primary-green text-white font-semibold px-6 py-3 rounded-lg shadow-custom hover:color-primary-hover">
+                    Guardar Producto
+                </button>
+            </div>
+        </div>
+
+        <!-- ********** 3. LISTA INVENTARIO ********** -->
+        <div id="screen-list" class="screen">
+            <div class="shadow-custom color-card-bg rounded-xl p-8">
+                <h2 class="text-2xl font-bold color-text-dark mb-4">📦 Inventario</h2>
+        
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b color-border">
+                            <th class="p-2">SKU</th>
+                            <th class="p-2">Nombre</th>
+                            <th class="p-2">Descripción</th>
+                            <th class="p-2">Stock Inicial</th>
+                            <th class="p-2">Stock Vendido</th>
+                            <th class="p-2">Precio</th>
+                            <th class="p-2">Imagen</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventory-table"></tbody>
+                </table>
+            </div>
+        </div>
+        
+
+
+        <!-- ********** 4. CAJA DEL DÍA ********** -->
+        <div id="screen-sales" class="screen">
+            <div class="shadow-custom color-card-bg rounded-xl p-8">
+        
+                <h2 class="text-2xl font-bold color-text-dark mb-6">💰 Caja del Día</h2>
+        
+                <!-- 🔎 VENTA RÁPIDA -->
+                <div id="venta-rapida" class="color-card-bg p-6 rounded-xl border color-border shadow-md mb-10">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-5">2. Venta Rápida / Consulta</h2>
+        
+                    <input type="number" id="sku-input" placeholder="Ingresa el SKU"
+                        class="w-full p-4 text-xl border color-border rounded-xl
+                               focus:border-green-700 focus:ring-1 focus:ring-[#577161]
+                               transition duration-150 mb-5 text-gray-700"
+                        autofocus oninput="buscarSKU()">
+        
+                    <button onclick="confirmarVentaRapida()"
+                        class="flex items-center justify-center w-full py-4
+                               color-primary-green text-white font-bold rounded-xl
+                               shadow-lg hover:color-primary-hover transition duration-200
+                               active:bg-green-800 text-lg">
+                        <span class="mr-3 text-xl">🚀</span> CONFIRMAR VENTA (+1)
+                    </button>
+        
+                    <p class="text-gray-500 mt-4">Consulta el estado del producto ingresando un SKU.</p>
+        
+                    <!-- CARD AUTO-MOSTRADA DEL PRODUCTO -->
+                    <div id="venta-card-info" class="hidden mt-6 p-4 rounded-xl border color-border bg-gray-50">
+                        <p class="text-lg font-semibold color-text-dark" id="venta-nombre"></p>
+                        <p class="text-gray-700 text-md mt-1">Stock: <span id="venta-stock"></span></p>
+                        <p class="text-gray-700 text-md">Precio: $<span id="venta-precio"></span></p>
+        
+                        <img id="venta-imagen" class="mt-4 rounded-xl w-32 h-32 object-cover hidden">
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+        
+
+    </section>
+
+    <!-- TOAST DE CONFIRMACIÓN -->
+    <div id="toast"
+    class="hidden fixed bottom-5 right-5 px-5 py-4 rounded-xl shadow-lg
+        bg-green-600 text-white font-semibold text-lg
+        opacity-0 transition-all duration-300 transform translate-y-4">
+    Confirmación
+    </div>
+
+    <!-- ************************* JS ************************* -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="app/app.js"></script>
+
+</body>
+</html>
