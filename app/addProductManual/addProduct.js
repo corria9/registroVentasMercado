@@ -1,19 +1,50 @@
-/* ------ AGREGAR MANUAL (VERSIÓN DEPURADA) ------ */
+/* ------ AGREGAR MANUAL (VERSIÓN CON VALIDACIÓN DE SKU ÚNICO) ------ */
 function addProduct() {
-    try {
-        // 1. Obtener los elementos por ID (para obtener valores y limpiarlos después)
-        const skuInput = document.getElementById("add-sku");
-        const nombreInput = document.getElementById("add-nombre");
-        const descInput = document.getElementById("add-desc");
-        const stockInput = document.getElementById("add-stock");
-        const precioInput = document.getElementById("add-precio");
-        const imagenInput = document.getElementById("add-imagen");
+    // 1. Obtener los elementos por ID (para obtener valores y limpiarlos después)
+    const skuInput = document.getElementById("add-sku");
+    const nombreInput = document.getElementById("add-nombre");
+    const descInput = document.getElementById("add-desc");
+    const stockInput = document.getElementById("add-stock");
+    const precioInput = document.getElementById("add-precio");
+    const imagenInput = document.getElementById("add-imagen");
+    
+    // Elementos de feedback visual para el SKU
+    const skuErrorMessage = document.getElementById('sku-error-message');
 
+    try {
         // **A. Validación de Campos Esenciales**
-        if (!skuInput || !nombreInput || !stockInput || !precioInput || !skuInput.value || !nombreInput.value || stockInput.value === "" || precioInput.value === "") {
+        const skuValue = skuInput.value.trim();
+        const nombreValue = nombreInput.value.trim();
+        const stockValue = stockInput.value;
+        const precioValue = precioInput.value;
+
+
+        if (!skuValue || !nombreValue || stockValue === "" || precioValue === "") {
             // Muestra un error si faltan datos
+            // Asegúrate de limpiar el mensaje de error de SKU si no hay un error específico de unicidad
+            if (skuErrorMessage) skuErrorMessage.classList.add('hidden');
             return showToast("🚨 Error: Faltan datos esenciales (SKU, Nombre, Stock o Precio).", 'error');
         }
+
+        // ********** NUEVA VALIDACIÓN DE SKU ÚNICO **********
+        
+        // 1. Limpiar el estilo de error previo y el mensaje
+        skuInput.classList.remove('border-red-500');
+        if (skuErrorMessage) skuErrorMessage.classList.add('hidden');
+
+        // 2. Verificar si el SKU ya existe en el array 'inventory'
+        // Asumiendo que 'inventory' es un array global o accesible que contiene todos los productos.
+        const skuExistente = inventory.some(item => item.sku === skuValue);
+
+        if (skuExistente) {
+            // SKU DUPLICADO: Detener el proceso y mostrar error visual
+            skuInput.classList.add('border-red-500');
+            if (skuErrorMessage) skuErrorMessage.classList.remove('hidden');
+
+            return showToast('🚨 Error: El SKU ingresado ya existe. Por favor, usa un SKU único.', 'error');
+        }
+        
+        // ********************************************
 
         const imgFile = imagenInput ? imagenInput.files[0] : null;
         let imgURL = null;
@@ -26,19 +57,19 @@ function addProduct() {
 
         // 2. Crear el objeto del nuevo producto
         const item = {
-            sku: skuInput.value,
-            nombre: nombreInput.value,
+            sku: skuValue,
+            nombre: nombreValue,
             desc: descInput.value,
-            stock: Number(stockInput.value),
+            stock: Number(stockValue),
             vendido: 0,
-            precio: Number(precioInput.value),
+            precio: Number(precioValue),
             imagen: imgURL
         };
 
         // 3. Agregar al inventario
         inventory.push(item);
 
-        // 4. Renderizar (Estas funciones deben estar bien, sino el toast tampoco aparecerá)
+        // 4. Renderizar 
         renderTable();
         renderSales();
         
@@ -49,7 +80,6 @@ function addProduct() {
         stockInput.value = "";
         precioInput.value = "";
         
-        // El input de imagen es el más probable de fallar si no existe
         if (imagenInput) { 
             imagenInput.value = ""; 
         }
@@ -60,12 +90,12 @@ function addProduct() {
     } catch (e) {
         // Si hay un error, lo atrapamos y mostramos un toast de error con el detalle
         console.error("Error en addProduct:", e);
-        // Usamos alert como respaldo, por si el toast falla
-        alert("Ocurrió un error inesperado. Revisa la consola (F12) para más detalles."); 
         
-        // Intenta mostrar el toast de error con el mensaje de la excepción (si showToast está accesible)
+        // Intenta mostrar el toast de error
         if (typeof showToast === 'function') {
              showToast("❌ Error crítico: Consulta la consola para el detalle.", 'error');
+        } else {
+             alert("Ocurrió un error inesperado. Revisa la consola (F12) para más detalles.");
         }
     }
 }

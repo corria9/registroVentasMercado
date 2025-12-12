@@ -10,7 +10,7 @@
 
     <!-- Toastify js -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-     <!-- Styles Personalizados -->
+    <!-- Styles Personalizados -->
     <link rel="stylesheet" type="text/css" href="app/styles/styles.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -90,6 +90,7 @@
 
                 <div class="grid grid-cols-1 gap-4">
                     <input id="add-sku" class="border p-3 rounded" placeholder="SKU">
+                    <p id="sku-error-message" class="text-red-600 text-sm hidden mt-[-10px]">⚠️ Error: Este SKU ya existe en el inventario.</p>
                     <input id="add-nombre" class="border p-3 rounded" placeholder="Nombre del producto">
                     <input id="add-desc" class="border p-3 rounded" placeholder="Descripción">
                     <input id="add-stock" type="number" class="border p-3 rounded" placeholder="Stock Inicial">
@@ -156,6 +157,10 @@
                                active:bg-green-800 text-lg">
                         <span class="mr-3 text-xl">🚀</span> CONFIRMAR VENTA (+1)
                     </button>
+
+                    <p id="sku-not-found-message" class="text-red-600 font-semibold mt-3 hidden">
+                        ❌ Error: El SKU ingresado no se encuentra en el inventario.
+                    </p>
         
                     <p class="text-gray-500 mt-4">Consulta el estado del producto ingresando un SKU.</p>
         
@@ -195,6 +200,7 @@
                 </button>
             </div>
         </div>
+        
         
 
     </section>

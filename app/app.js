@@ -105,27 +105,43 @@ function sell(index) {
 }
 
 let skuSeleccionado = null;
+const STOCK_MINIMO = 5; // Umbral para la alerta de stock bajo
 
 /* 🔎 BUSCAR SKU EN VENTA RÁPIDA */
 function buscarSKU() {
     const sku = document.getElementById("sku-input").value.trim();
-    const card = document.getElementById("venta-card-info");
+    const infoCard = document.getElementById("venta-card-info");
+    
+    // Referencias a los nuevos elementos de feedback
+    const skuNotFoundMessage = document.getElementById('sku-not-found-message'); // Mensaje de SKU no encontrado
+    const stockAlert = document.getElementById('venta-stock-alert');           // Alerta de stock bajo (contenedor)
+    
+    // 1. Ocultar todos los mensajes de feedback por defecto
+    infoCard.classList.add("hidden");
+    if (skuNotFoundMessage) skuNotFoundMessage.classList.add('hidden');
+    if (stockAlert) stockAlert.classList.add('hidden');
+    skuSeleccionado = null;
 
     if (!sku) {
-        card.classList.add("hidden");
-        skuSeleccionado = null;
         return;
     }
 
     const item = inventory.find(p => String(p.sku) === sku);
 
     if (!item) {
-        card.classList.add("hidden");
-        skuSeleccionado = null;
+        // 2. Si el producto NO se encuentra, mostramos el error de SKU no encontrado
+        if (skuNotFoundMessage) skuNotFoundMessage.classList.remove('hidden');
+        
+        // Opcional: mostrarToast("SKU no encontrado en inventario.", 'error');
         return;
     }
 
-    // Mostrar card
+    // --- PRODUCTO ENCONTRADO ---
+    
+    // 3. Ocultar el error de SKU no encontrado si se encuentra un producto
+    if (skuNotFoundMessage) skuNotFoundMessage.classList.add('hidden'); 
+
+    // Asignar y mostrar card
     skuSeleccionado = item;
     document.getElementById("venta-nombre").textContent = item.nombre;
     document.getElementById("venta-stock").textContent = item.stock;
@@ -135,9 +151,64 @@ function buscarSKU() {
         const img = document.getElementById("venta-imagen");
         img.src = item.imagen;
         img.classList.remove("hidden");
+    } else {
+        document.getElementById("venta-imagen").classList.add("hidden");
     }
 
-    card.classList.remove("hidden");
+    infoCard.classList.remove("hidden");
+    
+    // 4. Comprobar y mostrar Alerta de Stock Bajo
+    if (item.stock <= STOCK_MINIMO && item.stock > 0) {
+        if (stockAlert) {
+            document.getElementById('alert-stock-qty').textContent = item.stock;
+            stockAlert.classList.remove('hidden');
+        }
+    }
+}
+
+/* 🚀 VENTA RÁPIDA (+1) */
+function confirmarVentaRapida() {
+    if (!skuSeleccionado) {
+        // Usar showToast en lugar de alert
+        showToast("Ingresa un SKU válido y consulta el producto primero.", 'error'); 
+        return;
+    }
+
+    // ** Validar Stock Agotado **
+    if (skuSeleccionado.stock <= 0) {
+        showToast(`🛑 Producto AGOTADO (${skuSeleccionado.nombre}). Stock actual: 0.`, 'error');
+        return;
+    }
+
+    // Venta
+    skuSeleccionado.stock -= 1;
+    skuSeleccionado.vendido += 1;
+
+    // Actualizar card y alertas
+    document.getElementById("venta-stock").textContent = skuSeleccionado.stock;
+    
+    // Si el stock llega al mínimo o menos, actualizar la alerta visual
+    const stockAlert = document.getElementById('venta-stock-alert');
+    if (skuSeleccionado.stock <= STOCK_MINIMO && skuSeleccionado.stock >= 0) {
+        if (stockAlert) {
+            document.getElementById('alert-stock-qty').textContent = skuSeleccionado.stock;
+            stockAlert.classList.remove('hidden'); // Aseguramos que se muestre si baja
+        }
+        if (skuSeleccionado.stock === 0) {
+            // Ocultar la alerta y mostrar mensaje de agotado si se vende la última unidad
+            if (stockAlert) stockAlert.classList.add('hidden');
+            showToast(`¡Última unidad vendida! ${skuSeleccionado.nombre} AGOTADO.`, 'warning');
+        }
+    }
+
+
+    // Refrescar tablas y listas
+    renderTable();
+    renderSales();
+
+    if (navigator.vibrate) navigator.vibrate(80);
+
+    showToast(`✅ Venta confirmada de ${skuSeleccionado.nombre}. Stock restante: ${skuSeleccionado.stock}`, 'success');
 }
 
 /* 🚀 VENTA RÁPIDA (+1) */
