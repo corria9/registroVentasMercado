@@ -10,46 +10,10 @@
 
     <!-- Toastify js -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+     <!-- Styles Personalizados -->
+    <link rel="stylesheet" type="text/css" href="app/styles/styles.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Estilos personalizados -->
-    <style>
-        .color-primary-green { background-color: #577161; }
-        .color-primary-hover { background-color: #3E4D45; }
-        .color-text-dark { color: #3C3231; }
-        .color-card-bg { background-color: #FFFFFF; }
-        .color-base-bg { background-color: #F7F7F7; }
-        .color-border { border-color: #E5E5E5; }
-
-        body { font-family: 'Inter', sans-serif; }
-        .shadow-custom {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08), 
-                        0 4px 10px rgba(0,0,0,0.05);
-        }
-
-        /* Botón archivo CSV */
-        #csv-file-input::-webkit-file-upload-button { visibility: hidden; }
-        #csv-file-input::before {
-            content: 'Seleccionar Archivo CSV';
-            display: inline-block;
-            background: #f0f0f0;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-weight: 600;
-            color: #3C3231;
-        }
-        #csv-file-input:hover::before {
-            border-color: #577161;
-            background: #e9e9e9;
-        }
-
-        .screen { display: none; }
-        .active-screen { display: block; }
-        
-    </style>
 </head>
 
 <body class="color-base-bg min-h-screen">
@@ -59,7 +23,7 @@
         <button onclick="showScreen('screen-csv')">📤 Carga CSV</button>
         <button onclick="showScreen('screen-add')">➕ Agregar Producto</button>
         <button onclick="showScreen('screen-list')">📦 Inventario</button>
-        <button onclick="showScreen('screen-sales')">💰 Caja del Día</button>
+        <button onclick="showScreen('screen-sales')">💰 Venta Ràpida</button>
     </nav>
 
     <!-- HEADER -->
@@ -170,7 +134,7 @@
         <div id="screen-sales" class="screen">
             <div class="shadow-custom color-card-bg rounded-xl p-8">
         
-                <h2 class="text-2xl font-bold color-text-dark mb-6">💰 Caja del Día</h2>
+                <h2 class="text-2xl font-bold color-text-dark mb-6">💰 Venta del Día</h2>
         
                 <!-- 🔎 VENTA RÁPIDA -->
                 <div id="venta-rapida" class="color-card-bg p-6 rounded-xl border color-border shadow-md mb-10">
@@ -203,6 +167,30 @@
                 </div>
         
             </div>
+            <!-- RESUMEN DEL TICKET ACTUAL -->
+            <div id="resumen-ticket-actual" class="color-card-bg p-6 rounded-xl border color-border shadow-md mt-6">
+                <h2 class="text-2xl font-semibold color-text-dark mb-4">3. Ticket en Preparación</h2>
+            
+                <div id="ticket-items-container">
+                    <p class="text-gray-500 italic">No hay productos en el ticket.</p>
+                </div>
+            
+                <div class="mt-4 pt-3 border-t color-border flex justify-between items-center">
+                    <span class="text-xl font-bold color-text-dark">TOTAL:</span>
+                    <span id="ticket-total-amount" class="text-2xl font-extrabold color-primary-green">$0.00</span>
+                </div>
+            
+                <button onclick="finalizarTicket()"
+                    class="mt-4 w-full py-3 color-primary-green text-white font-bold rounded-xl
+                           shadow-md hover:color-primary-hover transition duration-200">
+                    FINALIZAR VENTA
+                </button>
+                <button onclick="cancelarTicket()"
+                    class="mt-2 w-full py-2 text-red-700 bg-red-100 border border-red-300 font-semibold rounded-xl
+                           hover:bg-red-200 transition duration-200">
+                    CANCELAR TICKET
+                </button>
+            </div>
         </div>
         
 
@@ -216,10 +204,51 @@
     Confirmación
     </div>
 
+    <div id="modal-cliente" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="color-card-bg rounded-xl shadow-custom w-full max-w-md p-6">
+            <h3 class="text-2xl font-bold color-text-dark mb-4 border-b color-border pb-3">👤 Datos del Cliente</h3>
+            
+            <p class="text-gray-600 mb-4">Monto total de la venta: <span id="modal-total-venta" class="font-bold color-primary-green text-xl">$0.00</span></p>
+    
+            <form id="form-cliente" class="space-y-4">
+                <div>
+                    <label for="cliente-nombre" class="block text-sm font-medium text-gray-700">Nombre del Cliente (Opcional)</label>
+                    <input type="text" id="cliente-nombre" placeholder="Ej. Juan Pérez"
+                           class="mt-1 w-full p-3 border color-border rounded-lg focus:border-[#577161] focus:ring-1 focus:ring-[#577161]">
+                </div>
+                
+                <div>
+                    <label for="cliente-whatsapp" class="block text-sm font-medium text-gray-700">WhatsApp / Teléfono (Opcional)</label>
+                    <input type="tel" id="cliente-whatsapp" placeholder="Ej. 5512345678"
+                           class="mt-1 w-full p-3 border color-border rounded-lg focus:border-[#577161] focus:ring-1 focus:ring-[#577161]">
+                </div>
+                
+                <div>
+                    <label for="cliente-correo" class="block text-sm font-medium text-gray-700">Correo Electrónico (Opcional)</label>
+                    <input type="email" id="cliente-correo" placeholder="Ej. correo@ejemplo.com"
+                           class="mt-1 w-full p-3 border color-border rounded-lg focus:border-[#577161] focus:ring-1 focus:ring-[#577161]">
+                </div>
+                
+                <div class="pt-4 flex justify-end space-x-3">
+                    <button type="button" onclick="cerrarModalCliente()"
+                            class="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-100 transition duration-150">
+                        Cancelar
+                    </button>
+                    <button type="submit"
+                            class="px-4 py-2 color-primary-green text-white font-semibold rounded-lg hover:color-primary-hover transition duration-150">
+                        Finalizar Venta
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- ************************* JS ************************* -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="app/app.js"></script>
     <script src="app/pantallaCsv/processCsv.js"></script>
+    <script src="app/ventaRapida/salesQuick.js"></script>
+    <script src="app/ventaRapida/clientData.js"></script>
     <script src="app/addProductManual/addProduct.js"></script>
     <script src="app/addProductia/ia.js"></script>
 

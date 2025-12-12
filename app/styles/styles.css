@@ -1,0 +1,34 @@
+.color-primary-green { background-color: #577161; }
+        .color-primary-hover { background-color: #3E4D45; }
+        .color-text-dark { color: #3C3231; }
+        .color-card-bg { background-color: #FFFFFF; }
+        .color-base-bg { background-color: #F7F7F7; }
+        .color-border { border-color: #E5E5E5; }
+
+        body { font-family: 'Inter', sans-serif; }
+        .shadow-custom {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08), 
+                        0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Botón archivo CSV */
+        #csv-file-input::-webkit-file-upload-button { visibility: hidden; }
+        #csv-file-input::before {
+            content: 'Seleccionar Archivo CSV';
+            display: inline-block;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #3C3231;
+        }
+        #csv-file-input:hover::before {
+            border-color: #577161;
+            background: #e9e9e9;
+        }
+
+        .screen { display: none; }
+        .active-screen { display: block; }
+        
