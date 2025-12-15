@@ -158,3 +158,91 @@ formEditarInventario.addEventListener('submit', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     fetchInventory();
 });
+
+// --- Nuevas funciones para la API y Event Listener ---
+
+/**
+ * Envía los datos actualizados del producto a la API usando el método PATCH.
+ * @param {string} sku - El SKU del producto a actualizar.
+ * @param {object} data - Los campos a actualizar (nombre, desc, stock, precio).
+ * @returns {Promise<object | null>} El producto actualizado devuelto por la API.
+ */
+ async function updateProductInApi(sku, data) {
+    try {
+        console.log(`Enviando actualización PATCH para SKU: ${sku}`, data);
+
+        const response = await fetch(`${API_BASE_URL}/${sku}`, {
+            method: 'PATCH', // Usamos PATCH para actualizar parcialmente
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            // IMPORTANTE: Enviamos los datos usando el nombre de campo Python: 'desc'
+            body: JSON.stringify(data), 
+        });
+
+        if (response.status === 404) {
+            throw new Error(`Error 404: Producto con SKU ${sku} no encontrado en la API.`);
+        }
+        
+        if (!response.ok) {
+            // Intenta leer el detalle del error de FastAPI
+            const errorData = await response.json();
+            throw new Error(`Error al actualizar producto: ${response.status} - ${errorData.detail || 'Fallo desconocido'}`);
+        }
+
+        // Si la respuesta es 200 OK, devuelve el producto actualizado
+        return await response.json();
+
+    } catch (error) {
+        console.error("Fallo crítico al actualizar el producto:", error);
+        // Aquí podrías mostrar una notificación de error al usuario
+        return null;
+    }
+}
+
+
+// ** Lógica para guardar los cambios al enviar el formulario (Event Listener) **
+// Reemplaza el event listener anterior con esta versión async.
+formEditarInventario.addEventListener('submit', async (e) => { 
+    e.preventDefault();
+    
+    // 1. Obtener valores del formulario
+    const originalSku = document.getElementById('edit-original-sku').value;
+    const nuevoNombre = document.getElementById('edit-nombre').value;
+    const nuevaDesc = document.getElementById('edit-desc').value;
+    const nuevoStock = parseInt(document.getElementById('edit-stock').value);
+    const nuevoPrecio = parseFloat(document.getElementById('edit-precio').value);
+
+    // 2. Preparar los datos que se enviarán al Backend
+    const updateData = {
+        nombre: nuevoNombre,
+        desc: nuevaDesc,       // Usamos 'desc' para que coincida con el campo Python
+        stock: nuevoStock,
+        precio: nuevoPrecio
+    };
+
+    // 3. Llamar a la API para actualizar en Firestore
+    const updatedProduct = await updateProductInApi(originalSku, updateData);
+
+    if (updatedProduct) {
+        // 4. Si la actualización en la API fue exitosa (200 OK):
+        
+        // Actualizamos el array local 'inventory' con el objeto devuelto por el backend
+        const index = inventory.findIndex(p => p.sku === originalSku);
+        
+        if (index !== -1) {
+            // Reemplazamos el producto antiguo con el objeto devuelto (que incluye stock_disponible, etc.)
+            inventory[index] = updatedProduct; 
+        }
+
+        // 5. Volver a renderizar la tabla y cerrar el modal
+        renderTable(); 
+        cerrarModalEdicion();
+        console.log('Producto actualizado con éxito!', updatedProduct);
+        // mostrarToast('Producto actualizado!', 'success');
+        
+    } else {
+        // El error ya fue manejado y mostrado en la consola por updateProductInApi
+        // mostrarToast('Error al guardar los cambios.', 'error');
+    }
+});
