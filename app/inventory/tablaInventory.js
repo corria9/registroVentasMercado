@@ -1,24 +1,62 @@
 // --- app/inventory/tablaInventory.js ---
 
-// Asumo que 'inventory' es un array global o accesible que contiene tus productos.
-// Asegúrate de que las propiedades del objeto son: sku, nombre, desc, stock, vendido, precio, imagen.
+// 1. Configuración y variable global
+//let inventory = []; 
+const API_BASE_URL = "http://127.0.0.1:8000/api/v1/productos"; // Asegúrate que esta URL es correcta
 
+// --- Funciones de Lógica de Datos ---
+
+/**
+ * Obtiene la lista de productos desde la API de FastAPI.
+ */
+async function fetchInventory() {
+    try {
+        console.log("Cargando inventario desde la API...");
+        
+        const response = await fetch(API_BASE_URL);
+
+        if (!response.ok) {
+            throw new Error(`Error HTTP al cargar el inventario: ${response.status}`);
+        }
+
+        // 2. Rellenar el array global 'inventory'
+        const data = await response.json();
+        inventory = data; 
+        
+        // 3. Renderizar la tabla con los datos
+        renderTable(); 
+
+        console.log(`Inventario cargado exitosamente. Total de productos: ${inventory.length}`);
+        
+    } catch (error) {
+        console.error("Fallo al obtener el inventario:", error);
+        // Implementar aquí una notificación para el usuario (ej: un toast)
+    }
+}
+
+
+// --- Funciones de Renderizado ---
+
+/**
+ * Dibuja el contenido del array 'inventory' en la tabla HTML.
+ */
 function renderTable() {
     const tbody = document.getElementById("inventory-table");
     tbody.innerHTML = "";
 
     inventory.forEach(item => {
-        const imageHtml = item.imagen 
-            ? `<img src="${item.imagen}" alt="${item.nombre}" class="w-12 h-12 object-cover rounded-md">`
+        // ⭐ CORRECCIÓN: Usamos 'imagen_url' que es el campo que devuelve FastAPI
+        const imageHtml = item.imagen_url 
+            ? `<img src="${item.imagen_url}" alt="${item.nombre}" class="w-12 h-12 object-cover rounded-md">`
             : `<span class="text-gray-500 text-xs">No img</span>`;
         
-        // Convertimos el objeto 'item' a una cadena JSON que podemos pasar a la función
-        // Reemplazamos las comillas dobles por comillas simples para que no rompa el atributo onclick
+        // Convertimos el objeto 'item' a JSON para pasarlo al modal
+        // Usamos .replace(/"/g, "'") para evitar romper el atributo onclick en HTML
         const itemJsonString = JSON.stringify({
             sku: item.sku,
             nombre: item.nombre,
-            descripcion: item.desc, // Usar 'descripcion' para coincidir con el modal
-            stockInicial: item.stock, // Usar 'stockInicial' para coincidir con el modal
+            desc: item.desc, 
+            stockInicial: item.stock, 
             precio: item.precio
         }).replace(/"/g, "'");
 
@@ -46,11 +84,13 @@ function renderTable() {
     });
 }
 
-// Estas funciones pueden ir en tu archivo tablaInventory.js o en app.js
-// para que sean globales.
 
+// --- Lógica del Modal de Edición ---
+
+// Referencias a los elementos del modal (Asegúrate que estos IDs existen en tu HTML)
 const modalEditarInventario = document.getElementById('modal-editar-inventario');
 const formEditarInventario = document.getElementById('form-editar-inventario');
+
 
 /**
  * Abre el modal de edición y precarga los datos del producto.
@@ -59,11 +99,11 @@ const formEditarInventario = document.getElementById('form-editar-inventario');
 function abrirModalEdicion(producto) {
     // 1. Llenar los campos del modal
     document.getElementById('edit-sku-display').textContent = producto.sku;
-    document.getElementById('edit-original-sku').value = producto.sku; // SKU original para buscar al guardar
+    document.getElementById('edit-original-sku').value = producto.sku; 
     document.getElementById('edit-sku').value = producto.sku; 
     document.getElementById('edit-nombre').value = producto.nombre;
-    document.getElementById('edit-desc').value = producto.descripcion; // Propiedad 'descripcion' del modal
-    document.getElementById('edit-stock').value = producto.stockInicial; // Propiedad 'stockInicial' del modal
+    document.getElementById('edit-desc').value = producto.desc; 
+    document.getElementById('edit-stock').value = producto.stockInicial; 
     document.getElementById('edit-precio').value = producto.precio;
 
     // 2. Mostrar el modal
@@ -91,22 +131,30 @@ formEditarInventario.addEventListener('submit', (e) => {
     const nuevoStock = parseInt(document.getElementById('edit-stock').value);
     const nuevoPrecio = parseFloat(document.getElementById('edit-precio').value);
 
-    // 1. Buscar y actualizar el producto en tu array 'inventory'
+    // 1. Buscar y actualizar el producto en tu array 'inventory' (Esto es solo local)
     const index = inventory.findIndex(p => p.sku === originalSku);
     
     if (index !== -1) {
         inventory[index].nombre = nuevoNombre;
-        inventory[index].desc = nuevaDesc; // Actualizar con el nombre de propiedad real: 'desc'
-        inventory[index].stock = nuevoStock; // Actualizar con el nombre de propiedad real: 'stock'
+        inventory[index].desc = nuevaDesc; 
+        inventory[index].stock = nuevoStock; 
         inventory[index].precio = nuevoPrecio;
 
+        // NOTA: FALTA la llamada PUT/PATCH a la API para actualizar en Firestore
+
         // 2. Volver a renderizar la tabla y cerrar el modal
-        renderTable(); // Llama a tu función para refrescar la tabla
+        renderTable(); 
         cerrarModalEdicion();
-        // Asumiendo que tienes una función para notificaciones:
-        // mostrarToast('Producto actualizado!', 'success');
         
     } else {
-        // mostrarToast('Error: Producto no encontrado', 'error');
+        console.error('Error: Producto no encontrado para edición');
     }
+});
+
+
+// --- Lógica de Inicialización ---
+
+// Ejecuta la función de carga cuando el DOM esté completamente cargado.
+document.addEventListener('DOMContentLoaded', () => {
+    fetchInventory();
 });
