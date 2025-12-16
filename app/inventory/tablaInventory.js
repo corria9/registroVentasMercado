@@ -27,7 +27,7 @@ async function fetchInventory() {
         renderTable(); 
 
         console.log(`Inventario cargado exitosamente. Total de productos: ${inventory.length}`);
-        
+        showToast("✅ Inventario cargado con éxito.", 'success');
     } catch (error) {
         console.error("Fallo al obtener el inventario:", error);
         // Implementar aquí una notificación para el usuario (ej: un toast)

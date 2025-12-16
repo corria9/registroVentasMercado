@@ -1,5 +1,3 @@
-// --- Lógica para el Modal de Administrador CSV ---
-
 // 1. Definir la contraseña de administrador (deberías mover esto a una variable de entorno en producción, pero para este ejercicio, la definimos aquí)
 const ADMIN_PASSWORD = "1234"; // ¡Cambia esta contraseña!
 

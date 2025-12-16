@@ -85,10 +85,12 @@ async function addProduct() {
             // Intenta extraer el detalle del error, si existe
             const errorMessage = errorData.detail || errorData.message || `Error del servidor (${response.status})`;
             throw new Error(errorMessage);
+            
         }
+        
 
         // ⭐ El producto fue guardado en Firestore y la imagen en Storage por el Backend.
-
+        showToast("✅ Producto cargado con éxito.", 'success');
         // 5. RECUPERAR DATOS Y RENDERIZAR
         // Asumimos que tienes una función global 'loadInventory' que trae los datos desde la API.
         if (typeof loadInventory === 'function') {
@@ -119,7 +121,8 @@ async function addProduct() {
         showToast(`❌ Error al guardar producto: ${e.message}`, 'error');
         
     } finally {
+        //showToast("✅ Producto cargado con éxito.", 'success');
         // Oculta el indicador de carga al finalizar (opcional)
-        // showLoading(false); 
+        showLoading(false); 
     }
 }

@@ -347,8 +347,15 @@
         </div>
     </div>
 
+    <script>
+        // ESTA ES LA ÚNICA VARIABLE QUE CAMBIARÁS AL DEPLOY
+        window.GLOBAL_API_BASE_URL = "http://127.0.0.1:8000/api/v1/productos";
+        // window.GLOBAL_API_BASE_URL = "https://armaly-backend-xyz.a.run.app/api/v1/productos";
+    </script>
+
     <!-- ************************* JS ************************* -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="module" src="app/js/config.js"></script>
     <script src="app/app.js"></script>
     <script src="app/pantallaCsv/processCsv.js"></script>
     <script src="app/ventaRapida/salesQuick.js"></script>
