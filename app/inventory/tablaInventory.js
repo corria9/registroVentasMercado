@@ -71,15 +71,25 @@ function renderTable() {
                 <td class="p-2">${imageHtml}</td>
                 
                 <td class="p-2">
-                    <button onclick="abrirModalEdicion(${itemJsonString})"
-                            class="text-gray-500 hover:text-blue-600 transition duration-150 p-1 rounded-full"
-                            title="Editar producto">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-7-7l10-10 4 4-10 10-4 10-4-10z" />
-                        </svg>
-                    </button>
+                    <div class="flex space-x-2">
+                        <button onclick="abrirModalEdicion(${itemJsonString})"
+                                class="text-blue-500 hover:text-blue-700 p-1 rounded-full hover:bg-blue-50"
+                                title="Editar producto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                            </svg>
+                        </button>
+
+                        <button onclick="confirmarEliminar('${item.sku}', '${item.nombre}')"
+                                class="text-red-500 hover:text-red-700 p-1 rounded-full hover:bg-red-50"
+                                title="Eliminar producto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                        </button>
+                    </div>
                 </td>
-                </tr>
+            </tr>
         `;
     });
 }
@@ -246,3 +256,57 @@ formEditarInventario.addEventListener('submit', async (e) => {
         // mostrarToast('Error al guardar los cambios.', 'error');
     }
 });
+
+/**
+ * Pide confirmación al usuario antes de borrar.
+ */
+ let skuAEliminar = null;
+
+ // Reemplaza tu función confirmarEliminar vieja por esta:
+ function confirmarEliminar(sku, nombre) {
+     skuAEliminar = sku;
+     document.getElementById('borrar-nombre-prod').textContent = `"${nombre}" (SKU: ${sku})`;
+     
+     const modal = document.getElementById('modal-confirmar-borrar');
+     modal.classList.remove('hidden');
+     
+     // Configurar el botón de eliminar del modal
+     const btnEliminar = document.getElementById('btn-confirmar-borrado-final');
+     btnEliminar.onclick = async () => {
+         await eliminarProducto(skuAEliminar);
+         cerrarModalBorrar();
+     };
+ }
+ 
+ function cerrarModalBorrar() {
+     document.getElementById('modal-confirmar-borrar').classList.add('hidden');
+     skuAEliminar = null;
+ }
+
+/**
+ * Llama a la API de FastAPI para borrar el producto.
+ */
+async function eliminarProducto(sku) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/${sku}`, {
+            method: 'DELETE',
+        });
+
+        if (!response.ok) {
+            throw new Error(`Error al eliminar: ${response.status}`);
+        }
+
+        showToast("🗑️ Producto eliminado correctamente.", 'success');
+
+        // Actualizar la tabla localmente quitando el elemento del array
+        inventory = inventory.filter(p => p.sku !== sku);
+        renderTable();
+        
+        // También refrescar la sección de ventas si es necesario
+        if (typeof renderSales === 'function') renderSales();
+
+    } catch (error) {
+        console.error("Fallo al eliminar:", error);
+        showToast("❌ No se pudo eliminar el producto.", 'error');
+    }
+}
