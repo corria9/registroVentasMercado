@@ -2,7 +2,7 @@
 
 // 1. Configuración y variable global
 //let inventory = []; 
-const API_BASE_URL = "http://127.0.0.1:8000/api/v1/productos"; // Asegúrate que esta URL es correcta
+const API_BASE_URL = "http://127.0.0.1:8000/api/v1/productos/"; // Asegúrate que esta URL es correcta
 
 // --- Funciones de Lógica de Datos ---
 
