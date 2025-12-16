@@ -210,32 +210,3 @@ function confirmarVentaRapida() {
 
     showToast(`✅ Venta confirmada de ${skuSeleccionado.nombre}. Stock restante: ${skuSeleccionado.stock}`, 'success');
 }
-
-/* 🚀 VENTA RÁPIDA (+1) */
-function confirmarVentaRapida() {
-    if (!skuSeleccionado) {
-        alert("Ingresa un SKU válido");
-        return;
-    }
-
-    if (skuSeleccionado.stock <= 0) {
-        alert("Sin stock disponible");
-        return;
-    }
-
-    skuSeleccionado.stock -= 1;
-    skuSeleccionado.vendido += 1;
-
-    // Actualizar card
-    document.getElementById("venta-stock").textContent = skuSeleccionado.stock;
-
-    // Refrescar tablas y listas
-    renderTable();
-    renderSales();
-
-    // Vibración ligera en móvil (super útil en mercado)
-    if (navigator.vibrate) navigator.vibrate(80);
-
-    // Mensaje rápido
-    console.log("Venta registrada");
-}

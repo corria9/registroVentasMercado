@@ -11,118 +11,101 @@ const BACKEND_URL = "http://127.0.0.1:8000";
 
 const API_ENDPOINT = BACKEND_URL + "/api/v1/productos";
 
+/* ===================================================================
+   🚀 FUNCIÓN addProduct() - VERSIÓN FINAL PARA PRODUCCIÓN
+   =================================================================== */
 
-// La función debe ser 'async' para poder usar 'await' con fetch.
-async function addProduct() { 
-    
-    // 1. Obtener los elementos del DOM
+   async function addProduct() {
+    // 1. Referencias a elementos del DOM
     const skuInput = document.getElementById("add-sku");
     const nombreInput = document.getElementById("add-nombre");
     const descInput = document.getElementById("add-desc");
     const stockInput = document.getElementById("add-stock");
     const precioInput = document.getElementById("add-precio");
     const imagenInput = document.getElementById("add-imagen");
+    const btnGuardar = document.querySelector("button[onclick='addProduct()']");
     
-    // Elementos de feedback visual para el SKU
+    // Feedback visual de SKU
     const skuErrorMessage = document.getElementById('sku-error-message');
 
-    // Muestra un indicador de carga (opcional: si tienes una función showLoading)
-    // showLoading(true); 
-
     try {
-        // A. Obtener y Validar Campos Esenciales
+        // --- A. VALIDACIONES INICIALES ---
         const skuValue = skuInput.value.trim();
         const nombreValue = nombreInput.value.trim();
         const stockValue = stockInput.value;
         const precioValue = precioInput.value;
+        const imgFile = imagenInput ? imagenInput.files[0] : null;
 
         if (!skuValue || !nombreValue || stockValue === "" || precioValue === "") {
-            if (skuErrorMessage) skuErrorMessage.classList.add('hidden');
-            return showToast("🚨 Error: Faltan datos esenciales (SKU, Nombre, Stock o Precio).", 'error');
+            return showToast("🚨 Datos incompletos: SKU, Nombre, Stock y Precio son obligatorios.", 'error');
         }
 
-        // B. Validación de SKU Único (LOCAL)
-        // Nota: La validación final y más segura siempre debe realizarse en el Backend.
-        skuInput.classList.remove('border-red-500');
-        if (skuErrorMessage) skuErrorMessage.classList.add('hidden');
+        // --- B. ESTADO DE CARGA (UX) ---
+        // Cambiamos el estado del botón para que el usuario sepa que algo sucede
+        btnGuardar.disabled = true;
+        const originalText = btnGuardar.innerText;
         
-        // Asumiendo que 'inventory' es un array global o accesible.
-        if (inventory.some(item => item.sku === skuValue)) {
-            skuInput.classList.add('border-red-500');
-            if (skuErrorMessage) skuErrorMessage.classList.remove('hidden');
-            return showToast('🚨 Error: El SKU ingresado ya existe. Por favor, usa un SKU único.', 'error');
+        if (imgFile) {
+            btnGuardar.innerHTML = `<span>⏳ Subiendo Imagen...</span>`;
+            showToast("📸 Procesando imagen, esto puede tardar unos segundos...", 'info');
+        } else {
+            btnGuardar.innerHTML = `<span>⏳ Guardando...</span>`;
         }
 
-        const imgFile = imagenInput ? imagenInput.files[0] : null;
-        
-        // 2. CREAR EL OBJETO FormData para envío (Permite enviar archivo + texto)
+        // --- C. PREPARACIÓN DE DATOS ---
         const formData = new FormData();
-        
-        // Agregar los campos de texto
         formData.append("sku", skuValue);
         formData.append("nombre", nombreValue);
         formData.append("desc", descInput.value);
         formData.append("stock", Number(stockValue));
         formData.append("precio", Number(precioValue));
         
-        // Agregar el archivo de imagen (si existe)
         if (imgFile) {
-            // El nombre 'file' debe coincidir con el parámetro de tu endpoint de FastAPI (ej: file: UploadFile = File(None))
+            // El nombre 'imagen' debe coincidir con el parámetro en tu FastAPI
             formData.append("imagen", imgFile); 
         }
 
-        // 3. LLAMADA ASÍNCRONA AL BACKEND (POST)
+        // --- D. LLAMADA AL BACKEND ---
+        // API_ENDPOINT debe estar definido globalmente como "http://127.0.0.1:8000/api/v1/productos"
         const response = await fetch(API_ENDPOINT, { 
             method: 'POST',
-            // No se establece 'Content-Type' manualmente con FormData
             body: formData 
         });
 
-        // 4. MANEJO DE LA RESPUESTA DEL BACKEND
+        // --- E. MANEJO DE ERRORES DEL SERVIDOR ---
         if (!response.ok) {
-            // Si el backend devuelve un error (ej: SKU duplicado, error de base de datos)
             const errorData = await response.json();
-            // Intenta extraer el detalle del error, si existe
-            const errorMessage = errorData.detail || errorData.message || `Error del servidor (${response.status})`;
+            const errorMessage = errorData.detail || errorData.message || `Error ${response.status}`;
             throw new Error(errorMessage);
-            
         }
-        
 
-        // ⭐ El producto fue guardado en Firestore y la imagen en Storage por el Backend.
-        showToast("✅ Producto cargado con éxito.", 'success');
-        // 5. RECUPERAR DATOS Y RENDERIZAR
-        // Asumimos que tienes una función global 'loadInventory' que trae los datos desde la API.
-        if (typeof loadInventory === 'function') {
-            await loadInventory(); 
-            renderTable();
-            renderSales();
-        } else {
-            console.warn("Función loadInventory() no encontrada. La tabla no se actualizó automáticamente.");
-        }
-        
-        // 6. LIMPIEZA DE LOS CAMPOS
+        // --- F. ÉXITO ---
+        // 1. Mostramos el mensaje de éxito inmediatamente
+        showToast("✅ Producto guardado exitosamente.", 'success');
+
+        // 2. Limpiamos los campos del formulario
         skuInput.value = "";
         nombreInput.value = "";
         descInput.value = "";
         stockInput.value = "";
         precioInput.value = "";
-        
-        if (imagenInput) { 
-            imagenInput.value = ""; 
+        if (imagenInput) imagenInput.value = "";
+        if (skuErrorMessage) skuErrorMessage.classList.add('hidden');
+        skuInput.classList.remove('border-red-500');
+
+        // 3. Actualizamos los datos del inventario sin cambiar de pantalla
+        if (typeof loadInventory === 'function') {
+            await loadInventory(); 
+            if (typeof renderTable === 'function') renderTable();
+            if (typeof renderSales === 'function') renderSales();
         }
-        
-        // 7. Notificación de éxito
-        showToast("✅ Producto cargado con éxito y guardado en el servidor.", 'success');
-        
-    } catch (e) {
-        // Capturar errores de red, fallos del servidor, o errores de validación
-        console.error("Error en addProduct:", e);
-        showToast(`❌ Error al guardar producto: ${e.message}`, 'error');
-        
+
+    } catch (error) {
+        console.error("Error en addProduct:", error);
+        showToast(`❌ Error: ${error.message}`, 'error');
     } finally {
-        //showToast("✅ Producto cargado con éxito.", 'success');
-        // Oculta el indicador de carga al finalizar (opcional)
-        showLoading(false); 
+        // --- G. RESTAURAR BOTÓN ---
+        btnGuardar.disabled = false;
+        btnGuardar.innerText = "Guardar Producto";
     }
 }
