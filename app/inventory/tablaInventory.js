@@ -207,15 +207,8 @@ formEditarInventario.addEventListener('submit', async (e) => {
 });
 
 
-// --- Lógica de Inicialización ---
-
-// Ejecuta la función de carga cuando el DOM esté completamente cargado.
-document.addEventListener('DOMContentLoaded', () => {
-    fetchInventory();
-});
 
 // --- Nuevas funciones para la API y Event Listener ---
-
 /**
  * Envía los datos actualizados del producto a la API usando el método PATCH.
  * @param {string} sku - El SKU del producto a actualizar.
@@ -380,7 +373,14 @@ function setupImagePreview() {
     });
 }
 
-// Llama a esta función cuando el DOM esté listo
+// --- SECCIÓN DE INICIALIZACIÓN ÚNICA (AL FINAL DEL ARCHIVO) ---
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Cargar los datos de la API apenas abra la página
+    fetchInventory();
+
+    // 2. Activar la previsualización de imágenes en el modal
     setupImagePreview();
+    
+    // 3. (Opcional) Aquí puedes inicializar otros componentes visuales
+    console.log("Sistema de Inventario Inicializado");
 });

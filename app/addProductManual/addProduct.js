@@ -12,7 +12,7 @@ const BACKEND_URL = "http://127.0.0.1:8000";
 const API_ENDPOINT = BACKEND_URL + "/api/v1/productos";
 
 /* ===================================================================
-   🚀 FUNCIÓN addProduct() - VERSIÓN FINAL PARA PRODUCCIÓN
+   🚀 FUNCIÓN addProduct() - VERSIÓN FINAL INTEGRADA
    =================================================================== */
 
    async function addProduct() {
@@ -28,6 +28,9 @@ const API_ENDPOINT = BACKEND_URL + "/api/v1/productos";
     // Feedback visual de SKU
     const skuErrorMessage = document.getElementById('sku-error-message');
 
+    // Definición de la URL (Asegúrate de que coincida con tu API_BASE_URL)
+    const API_ENDPOINT = "http://127.0.0.1:8000/api/v1/productos/";
+
     try {
         // --- A. VALIDACIONES INICIALES ---
         const skuValue = skuInput.value.trim();
@@ -41,32 +44,29 @@ const API_ENDPOINT = BACKEND_URL + "/api/v1/productos";
         }
 
         // --- B. ESTADO DE CARGA (UX) ---
-        // Cambiamos el estado del botón para que el usuario sepa que algo sucede
         btnGuardar.disabled = true;
         const originalText = btnGuardar.innerText;
         
         if (imgFile) {
             btnGuardar.innerHTML = `<span>⏳ Subiendo Imagen...</span>`;
-            showToast("📸 Procesando imagen, esto puede tardar unos segundos...", 'info');
+            if (typeof showToast === 'function') showToast("📸 Procesando imagen...", 'info');
         } else {
             btnGuardar.innerHTML = `<span>⏳ Guardando...</span>`;
         }
 
-        // --- C. PREPARACIÓN DE DATOS ---
+        // --- C. PREPARACIÓN DE DATOS (FormData para enviar archivos) ---
         const formData = new FormData();
         formData.append("sku", skuValue);
         formData.append("nombre", nombreValue);
-        formData.append("desc", descInput.value);
+        formData.append("desc", descInput.value.trim() || ""); // Enviamos 'desc' para tu backend
         formData.append("stock", Number(stockValue));
         formData.append("precio", Number(precioValue));
         
         if (imgFile) {
-            // El nombre 'imagen' debe coincidir con el parámetro en tu FastAPI
             formData.append("imagen", imgFile); 
         }
 
         // --- D. LLAMADA AL BACKEND ---
-        // API_ENDPOINT debe estar definido globalmente como "http://127.0.0.1:8000/api/v1/productos"
         const response = await fetch(API_ENDPOINT, { 
             method: 'POST',
             body: formData 
@@ -75,34 +75,43 @@ const API_ENDPOINT = BACKEND_URL + "/api/v1/productos";
         // --- E. MANEJO DE ERRORES DEL SERVIDOR ---
         if (!response.ok) {
             const errorData = await response.json();
-            const errorMessage = errorData.detail || errorData.message || `Error ${response.status}`;
+            // Si el error es un detalle de validación de FastAPI
+            const errorMessage = errorData.detail || "Error al guardar el producto";
             throw new Error(errorMessage);
         }
 
         // --- F. ÉXITO ---
-        // 1. Mostramos el mensaje de éxito inmediatamente
-        showToast("✅ Producto guardado exitosamente.", 'success');
+        if (typeof showToast === 'function') showToast("✅ Producto guardado exitosamente.", 'success');
 
-        // 2. Limpiamos los campos del formulario
+        // 1. Limpiamos los campos del formulario
         skuInput.value = "";
         nombreInput.value = "";
         descInput.value = "";
         stockInput.value = "";
         precioInput.value = "";
         if (imagenInput) imagenInput.value = "";
+        
+        // Limpiar estilos de error si existían
         if (skuErrorMessage) skuErrorMessage.classList.add('hidden');
         skuInput.classList.remove('border-red-500');
 
-        // 3. Actualizamos los datos del inventario sin cambiar de pantalla
-        if (typeof loadInventory === 'function') {
-            await loadInventory(); 
-            if (typeof renderTable === 'function') renderTable();
-            if (typeof renderSales === 'function') renderSales();
+        // 2. ACTUALIZACIÓN AUTOMÁTICA DE LA TABLA
+        // Llamamos a la función de tablaInventory.js para refrescar los datos sin recargar
+        if (typeof fetchInventory === 'function') {
+            await fetchInventory(); 
+        } else {
+            console.warn("La función fetchInventory no está disponible en el alcance global.");
         }
 
     } catch (error) {
         console.error("Error en addProduct:", error);
-        showToast(`❌ Error: ${error.message}`, 'error');
+        if (typeof showToast === 'function') showToast(`❌ Error: ${error.message}`, 'error');
+        
+        // Si el error indica que el SKU ya existe, resaltamos el campo
+        if (error.message.toLowerCase().includes("sku")) {
+            skuInput.classList.add('border-red-500');
+            if (skuErrorMessage) skuErrorMessage.classList.remove('hidden');
+        }
     } finally {
         // --- G. RESTAURAR BOTÓN ---
         btnGuardar.disabled = false;
