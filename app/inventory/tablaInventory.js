@@ -106,8 +106,8 @@ const formEditarInventario = document.getElementById('form-editar-inventario');
  * Abre el modal de edición y precarga los datos del producto.
  * @param {object} producto - El objeto del producto a editar.
  */
-function abrirModalEdicion(producto) {
-    // 1. Llenar los campos del modal
+ function abrirModalEdicion(producto) {
+    // ... (tus campos actuales de SKU, nombre, etc.)
     document.getElementById('edit-sku-display').textContent = producto.sku;
     document.getElementById('edit-original-sku').value = producto.sku; 
     document.getElementById('edit-sku').value = producto.sku; 
@@ -116,7 +116,20 @@ function abrirModalEdicion(producto) {
     document.getElementById('edit-stock').value = producto.stockInicial; 
     document.getElementById('edit-precio').value = producto.precio;
 
-    // 2. Mostrar el modal
+    // --- NUEVA LÓGICA DE IMAGEN ---
+    const previewContainer = document.getElementById('edit-image-preview');
+    // Buscamos la URL real en el array 'inventory'
+    const prodData = inventory.find(p => p.sku === producto.sku);
+    
+    if (prodData && prodData.imagen_url) {
+        previewContainer.innerHTML = `<img src="${prodData.imagen_url}" class="w-full h-full object-cover">`;
+    } else {
+        previewContainer.innerHTML = `<span class="text-gray-400 text-xs text-center">Sin imagen</span>`;
+    }
+    
+    // Limpiar el input de archivo por si se usó antes
+    document.getElementById('edit-imagen').value = "";
+
     modalEditarInventario.classList.remove('hidden');
     modalEditarInventario.classList.add('flex'); 
 }
@@ -131,33 +144,65 @@ function cerrarModalEdicion() {
 
 
 // ** Lógica para guardar los cambios al enviar el formulario **
-formEditarInventario.addEventListener('submit', (e) => {
+formEditarInventario.addEventListener('submit', async (e) => { 
     e.preventDefault();
     
-    // Obtener valores del formulario
-    const originalSku = document.getElementById('edit-original-sku').value;
-    const nuevoNombre = document.getElementById('edit-nombre').value;
-    const nuevaDesc = document.getElementById('edit-desc').value;
-    const nuevoStock = parseInt(document.getElementById('edit-stock').value);
-    const nuevoPrecio = parseFloat(document.getElementById('edit-precio').value);
+    // 1. Obtener el SKU desde el campo oculto
+    const sku = document.getElementById('edit-original-sku').value;
+    const imgInput = document.getElementById('edit-imagen');
 
-    // 1. Buscar y actualizar el producto en tu array 'inventory' (Esto es solo local)
-    const index = inventory.findIndex(p => p.sku === originalSku);
-    
-    if (index !== -1) {
-        inventory[index].nombre = nuevoNombre;
-        inventory[index].desc = nuevaDesc; 
-        inventory[index].stock = nuevoStock; 
-        inventory[index].precio = nuevoPrecio;
+    // 2. Construir FormData (Obligatorio para enviar archivos + texto)
+    const formData = new FormData();
+    formData.append("nombre", document.getElementById('edit-nombre').value);
+    formData.append("desc", document.getElementById('edit-desc').value || "");
+    formData.append("stock", parseInt(document.getElementById('edit-stock').value));
+    formData.append("precio", parseFloat(document.getElementById('edit-precio').value));
 
-        // NOTA: FALTA la llamada PUT/PATCH a la API para actualizar en Firestore
+    if (imgInput.files && imgInput.files[0]) {
+        formData.append("imagen", imgInput.files[0]);
+    }
 
-        // 2. Volver a renderizar la tabla y cerrar el modal
+    try {
+        // Feedback visual
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Guardando...";
+
+        // 3. Petición al Backend
+        // IMPORTANTE: Asegúrate de que API_BASE_URL no termine en "/"
+        const url = `${API_BASE_URL}/${sku}`;
+        console.log("Enviando a:", url);
+
+        const response = await fetch(url, {
+            method: 'PATCH',
+            body: formData,
+            // 💡 NOTA: No incluyas 'Content-Type', el navegador lo pone solo al ver el FormData
+        });
+
+        if (!response.ok) {
+            const errorBody = await response.json();
+            throw new Error(errorBody.detail || "Fallo en el servidor");
+        }
+
+        const updatedProduct = await response.json();
+
+        // 4. Actualización exitosa: Refrescar inventario local
+        const index = inventory.findIndex(p => p.sku === sku);
+        if (index !== -1) {
+            inventory[index] = { ...inventory[index], ...updatedProduct };
+        }
+
         renderTable(); 
         cerrarModalEdicion();
-        
-    } else {
-        console.error('Error: Producto no encontrado para edición');
+        showToast("✅ Producto actualizado correctamente", "success");
+
+    } catch (error) {
+        console.error("Error en PATCH:", error);
+        showToast(`❌ Error: ${error.message}`, "error");
+    } finally {
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Guardar Cambios";
     }
 });
 
@@ -310,3 +355,32 @@ async function eliminarProducto(sku) {
         showToast("❌ No se pudo eliminar el producto.", 'error');
     }
 }
+
+// --- Función para Previsualización en Tiempo Real ---
+function setupImagePreview() {
+    const inputImagen = document.getElementById('edit-imagen');
+    const previewContainer = document.getElementById('edit-image-preview');
+
+    inputImagen.addEventListener('change', function() {
+        const file = this.files[0];
+        
+        if (file) {
+            const reader = new FileReader();
+            
+            // Cuando el archivo termina de leerse...
+            reader.onload = function(e) {
+                previewContainer.innerHTML = `
+                    <img src="${e.target.result}" 
+                         class="w-full h-full object-cover transition-opacity duration-300 opacity-100">
+                `;
+            };
+            
+            reader.readAsDataURL(file);
+        }
+    });
+}
+
+// Llama a esta función cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    setupImagePreview();
+});
