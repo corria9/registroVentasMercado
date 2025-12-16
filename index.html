@@ -36,20 +36,30 @@
     <section class="max-w-5xl mx-auto">
 
         <!-- ********** 1. PANTALLA CSV ********** -->
-        <div id="screen-csv" class="screen">
+        <div id="screen-csv" class="screen p-8 max-w-2xl mx-auto">
             <div class="shadow-custom color-card-bg rounded-xl p-8">
-                <h2 class="text-2xl font-bold color-text-dark mb-4">1. Carga de Inventario (.CSV)</h2>
-
-                <p class="mb-3 text-gray-700">
-                    Estructura requerida: <code>SKU, Nombre, Descripción Larga, Stock Inicial, Stock Vendido, Precio Venta</code>
+                
+                <h2 class="text-3xl font-bold color-text-dark mb-6 text-center">📤 Carga Masiva de Inventario (CSV)</h2>
+        
+                <p class="mb-4 text-gray-700 text-sm md:text-base">
+                    Estructura requerida: <code class="font-mono bg-gray-100 p-1 rounded">SKU, Nombre, Desc, Stock, Precio, Vendido</code>. Si el SKU ya existe, el producto será actualizado.
                 </p>
-
-                <input type="file" id="csv-file-input" accept=".csv" class="w-full mb-4">
-
-                <button onclick="processCSV()"
-                        class="color-primary-green hover:color-primary-hover text-white font-semibold px-6 py-3 rounded-lg shadow-custom">
-                    Subir Inventario
-                </button>
+        
+                <form id="form-csv-upload" class="space-y-6">
+                    <label class="block">
+                        <input type="file" id="csv-file-input" accept=".csv" required 
+                               class="mt-1 block w-full text-sm text-gray-900 rounded-lg cursor-pointer p-2">
+                    </label>
+        
+                    <button type="submit"
+                            class="w-full color-primary-green hover:color-primary-hover text-white font-semibold py-3 rounded-lg transition duration-150 shadow-md">
+                        Subir y Procesar Inventario
+                    </button>
+                </form>
+        
+                <div id="csv-upload-result" class="mt-6 p-4 bg-gray-100 rounded-lg hidden border-l-4 border-gray-400">
+                    </div>
+        
             </div>
         </div>
 
