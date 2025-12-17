@@ -1,9 +1,8 @@
 // --- app/inventory/tablaInventory.js ---
 
-// 1. Configuración y variable global
-//let inventory = []; 
-const API_BASE_URL = "http://127.0.0.1:8000/api/v1/productos/"; // Asegúrate que esta URL es correcta
 
+//const API_BASE_URL = "http://127.0.0.1:8000/api/v1/productos/"; // LOCAL
+const API_BASE_URL = "https://armaly-backend-224984538456.us-central1.run.app/api/v1/productos/"; // PRODUCCION
 // --- Funciones de Lógica de Datos ---
 
 /**

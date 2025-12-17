@@ -59,7 +59,6 @@ function showScreen(screenId) {
 const formCsvUpload = document.getElementById('form-csv-upload');
 const csvFileInput = document.getElementById('csv-file-input');
 const csvUploadResult = document.getElementById('csv-upload-result');
-// API_BASE_URL (debe ser la misma que en tablaInventory.js: http://127.0.0.1:8000/api/v1/productos)
 
 formCsvUpload.addEventListener('submit', async (e) => {
     e.preventDefault();

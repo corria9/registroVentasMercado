@@ -5,9 +5,10 @@
 
 // ⭐ IMPORTANTE: Define la URL de tu Backend aquí.
 // Usa esta para prueba local:
-const BACKEND_URL = "http://127.0.0.1:8000"; 
+//const BACKEND_URL = "http://127.0.0.1:8000"; 
+
 // Cambia a tu URL de Cloud Run (después del despliegue):
-//const BACKEND_URL = "https://armaly-backend-xyz123-uc.a.run.app"; 
+const BACKEND_URL = "https://armaly-backend-224984538456.us-central1.run.app"; 
 
 const API_ENDPOINT = BACKEND_URL + "/api/v1/productos";
 
@@ -29,7 +30,7 @@ const API_ENDPOINT = BACKEND_URL + "/api/v1/productos";
     const skuErrorMessage = document.getElementById('sku-error-message');
 
     // Definición de la URL (Asegúrate de que coincida con tu API_BASE_URL)
-    const API_ENDPOINT = "http://127.0.0.1:8000/api/v1/productos/";
+    const API_ENDPOINT = BACKEND_URL + "/api/v1/productos";
 
     try {
         // --- A. VALIDACIONES INICIALES ---
