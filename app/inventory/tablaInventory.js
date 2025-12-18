@@ -1,8 +1,8 @@
 // --- app/inventory/tablaInventory.js ---
 
 
-//const API_BASE_URL = "http://127.0.0.1:8000/api/v1/productos/"; // LOCAL
-const API_BASE_URL = "https://armaly-backend-224984538456.us-central1.run.app/api/v1/productos/"; // PRODUCCION
+//const API_BASE_URL = "http://127.0.0.1:8000/api/v1/productos"; // LOCAL
+const API_BASE_URL = "https://armaly-backend-224984538456.us-central1.run.app/api/v1/productos"; // PRODUCCION
 // --- Funciones de Lógica de Datos ---
 
 /**
@@ -246,54 +246,6 @@ formEditarInventario.addEventListener('submit', async (e) => {
         return null;
     }
 }
-
-
-// ** Lógica para guardar los cambios al enviar el formulario (Event Listener) **
-// Reemplaza el event listener anterior con esta versión async.
-formEditarInventario.addEventListener('submit', async (e) => { 
-    e.preventDefault();
-    
-    // 1. Obtener valores del formulario
-    const originalSku = document.getElementById('edit-original-sku').value;
-    const nuevoNombre = document.getElementById('edit-nombre').value;
-    const nuevaDesc = document.getElementById('edit-desc').value;
-    const nuevoStock = parseInt(document.getElementById('edit-stock').value);
-    const nuevoPrecio = parseFloat(document.getElementById('edit-precio').value);
-
-    // 2. Preparar los datos que se enviarán al Backend
-    const updateData = {
-        nombre: nuevoNombre,
-        desc: nuevaDesc,       // Usamos 'desc' para que coincida con el campo Python
-        stock: nuevoStock,
-        precio: nuevoPrecio
-    };
-
-    // 3. Llamar a la API para actualizar en Firestore
-    const updatedProduct = await updateProductInApi(originalSku, updateData);
-
-    if (updatedProduct) {
-        // 4. Si la actualización en la API fue exitosa (200 OK):
-        
-        // Actualizamos el array local 'inventory' con el objeto devuelto por el backend
-        const index = inventory.findIndex(p => p.sku === originalSku);
-        
-        if (index !== -1) {
-            // Reemplazamos el producto antiguo con el objeto devuelto (que incluye stock_disponible, etc.)
-            inventory[index] = updatedProduct; 
-        }
-
-        // 5. Volver a renderizar la tabla y cerrar el modal
-        renderTable(); 
-        cerrarModalEdicion();
-        console.log('Producto actualizado con éxito!', updatedProduct);
-        // mostrarToast('Producto actualizado!', 'success');
-        
-    } else {
-        // El error ya fue manejado y mostrado en la consola por updateProductInApi
-        // mostrarToast('Error al guardar los cambios.', 'error');
-    }
-});
-
 /**
  * Pide confirmación al usuario antes de borrar.
  */
