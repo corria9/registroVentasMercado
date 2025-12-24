@@ -51,9 +51,11 @@
 
     <!-- NAVEGACIÓN -->
     <nav class="w-full color-primary-green text-white p-4 flex justify-center gap-8 text-lg font-semibold shadow-md">
-        <div class="flex items-center gap-2">
-            <span>🌿</span>
-            <span>ArMaly Logística</span>
+        <div class="flex items-center gap-2"> 
+            <a href="../../index.html">
+                <span>🌿</span>
+                <span>ArMaly Logística</span>
+            </a>
         </div>
     </nav>
 
@@ -147,83 +149,76 @@
     </footer>
 
     <script>
-        // --- CONFIGURACIÓN DE BASE DE DATOS EXTERNA ---
+        // --- CONFIGURACIÓN DE BASE DE DATOS ---
         let rutas_db = {};
         let colonias_db = {};
         let costo_base_actual = 0;
-
+    
         /**
-         * Carga el archivo Excel desde la raíz del proyecto
+         * Carga el archivo JSON desde la raíz del proyecto
          */
         async function cargarBaseDeDatos() {
             try {
-                // 1. Leer el archivo datos.xlsx
-                const respuesta = await fetch('datos.xlsx');
-                if (!respuesta.ok) throw new Error("No se encontró el archivo datos.xlsx");
+                // Buscamos el archivo datos.json en la misma carpeta
+                const respuesta = await fetch('datos.json');
+                if (!respuesta.ok) throw new Error("No se encontró el archivo datos.json");
                 
-                const arrayBuffer = await respuesta.arrayBuffer();
+                const datosCargados = await respuesta.json();
                 
-                // 2. Procesar con la librería XLSX
-                const libro = XLSX.read(arrayBuffer, { type: 'array' });
-                const nombreHoja = libro.SheetNames[0];
-                const hoja = libro.Sheets[nombreHoja];
-                
-                // 3. Convertir a JSON
-                const datosCargados = XLSX.utils.sheet_to_json(hoja);
-                
-                // 4. Mapear a la estructura interna del cotizador
+                // Organizar los datos para las búsquedas
                 procesarEstructura(datosCargados);
                 
-                console.log("✅ Base de datos cargada desde Excel");
+                console.log("✅ Base de datos JSON cargada correctamente");
             } catch (error) {
                 console.error("❌ Error:", error);
-                alert("Atención: No se pudo cargar el archivo Excel. Asegúrate de que se llame 'datos.xlsx' y estés usando un servidor local (Live Server).");
+                alert("Error: No se pudo cargar 'datos.json'. Asegúrate de que el archivo exista y estés usando un servidor (Firebase o Live Server).");
             }
         }
-
+    
         /**
-         * Organiza los datos del JSON para las búsquedas rápidas
+         * Procesa el array de objetos JSON para acceso rápido
          */
         function procesarEstructura(datos) {
             rutas_db = {};
             colonias_db = {};
-
+    
             datos.forEach(item => {
                 const o = String(item.o);
                 const d = String(item.d);
-                const colKey = `${item.tipo} ${item.nom}`;
-
-                // Guardar distancia por ruta
+                const nombreColonia = `${item.tipo || ''} ${item.nom || ''}`.trim();
+    
+                // Guardar en diccionario de rutas
                 if(!rutas_db[o]) rutas_db[o] = {};
                 rutas_db[o][d] = item.km;
-
-                // Guardar información detallada por CP de destino
+    
+                // Guardar en diccionario de destinos/colonias
                 if(!colonias_db[d]) colonias_db[d] = [];
                 colonias_db[d].push({
-                    nombre: colKey,
-                    riesgo: parseFloat(item.riesgo) === 1 ? 15 : 0, // Recargo zona roja
+                    nombre: nombreColonia,
+                    riesgo: parseInt(item.riesgo) === 1 ? 15 : 0, // Recargo fijo de $15 si riesgo es 1
                     distancia: parseFloat(item.km)
                 });
             });
-
-            // Activar listener del selector
+    
+            // Escuchar cambios en el selector de colonias
             document.getElementById('select_colonia').addEventListener('change', actualizarTotal);
         }
-
+    
         /**
-         * Lógica principal de búsqueda al dar clic en el botón
+         * Ejecuta la búsqueda al presionar el botón
          */
         function procesarConsulta() {
             const cp_o = document.getElementById('input_origen').value.trim();
             const cp_d = document.getElementById('input_destino').value.trim();
-            const CP_HUB = "54070";
+            const CP_HUB = "54070"; // Tu centro de operaciones
             
-            let data_destino = colonias_db[cp_d];
-
-            if (data_destino) {
+            const data_destino = colonias_db[cp_d];
+    
+            if (data_destino && data_destino.length > 0) {
                 const select = document.getElementById('select_colonia');
-                select.innerHTML = "";
+                select.innerHTML = ""; // Limpiar opciones previas
                 
+                // Llenar el select con las colonias encontradas para ese CP
                 data_destino.forEach((col) => {
                     const opt = document.createElement('option');
                     opt.value = col.riesgo;
@@ -231,48 +226,53 @@
                     opt.text = col.nombre;
                     select.appendChild(opt);
                 });
-
+    
+                // Mostrar el panel de resultados
                 document.getElementById('contenedor_resultado').classList.remove('hidden');
                 document.getElementById('res_ruta').innerText = `${cp_o} ➔ ${cp_d}`;
-                document.getElementById('res_tipo').innerText = (cp_o === CP_HUB || cp_d === CP_HUB) ? "CONEXIÓN DIRECTA" : "RUTA ESTIMADA";
+                
+                // Determinar tipo de conexión
+                const esDirecta = (cp_o === CP_HUB || cp_d === CP_HUB);
+                document.getElementById('res_tipo').innerText = esDirecta ? "CONEXIÓN DIRECTA" : "RUTA ESTIMADA";
                 
                 actualizarTotal();
             } else {
-                alert("El CP de destino '" + cp_d + "' no se encuentra en el archivo Excel.");
+                alert("El Código Postal '" + cp_d + "' no está registrado en el sistema.");
             }
         }
-
+    
         /**
-         * Recalcula el precio basado en la colonia seleccionada
+         * Calcula y muestra el desglose final de precios
          */
         function actualizarTotal() {
             const select = document.getElementById('select_colonia');
             const optionSeleccionada = select.options[select.selectedIndex];
             
             if(!optionSeleccionada) return;
-
-            const recargo = parseFloat(optionSeleccionada.value) || 0;
+    
+            const recargoRiesgo = parseFloat(optionSeleccionada.value) || 0;
             const km = parseFloat(optionSeleccionada.getAttribute('data-km')) || 0;
             
-            // Fórmula: $12 por km, mínimo $29
+            // REGLA DE NEGOCIO: $12 por km, mínimo $29
             costo_base_actual = Math.max(km * 12.0, 29.0);
-            const total = costo_base_actual + recargo;
+            const totalFinal = costo_base_actual + recargoRiesgo;
             
-            // Reflejar en la interfaz
+            // Actualizar Interfaz
             document.getElementById('res_distancia').innerText = `${km.toFixed(2)} km`;
             document.getElementById('res_base').innerText = `$${costo_base_actual.toLocaleString('es-MX', {minimumFractionDigits: 2})}`;
-            document.getElementById('res_total').innerText = `$${total.toLocaleString('es-MX', {minimumFractionDigits: 2})}`;
+            document.getElementById('res_total').innerText = `$${totalFinal.toLocaleString('es-MX', {minimumFractionDigits: 2})}`;
             
+            // Mostrar/Ocultar alerta de riesgo
             const divRiesgo = document.getElementById('div_riesgo');
-            if (recargo > 0) {
+            if (recargoRiesgo > 0) {
                 divRiesgo.classList.remove('hidden');
-                document.getElementById('res_riesgo').innerText = `+$${recargo.toFixed(2)}`;
+                document.getElementById('res_riesgo').innerText = `+$${recargoRiesgo.toFixed(2)}`;
             } else {
                 divRiesgo.classList.add('hidden');
             }
         }
-
-        // Iniciar carga automáticamente al abrir la web
+    
+        // Iniciar carga automáticamente
         window.onload = cargarBaseDeDatos;
     </script>
 </body>

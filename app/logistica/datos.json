@@ -1,0 +1,4066 @@
+[
+  {
+    "o": "54070",
+    "d": "54000",
+    "km": 3.5,
+    "tipo": "Colonia",
+    "nom": "Tlalnepantla Centro",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54000",
+    "km": 4.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Alta Vista",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54009",
+    "km": 2.8,
+    "tipo": "Fraccionamiento",
+    "nom": "La Riviera",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54010",
+    "km": 4.8,
+    "tipo": "Colonia",
+    "nom": "La Azteca",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54010",
+    "km": 4.5,
+    "tipo": "Colonia",
+    "nom": "La Providencia",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54010",
+    "km": 5.2,
+    "tipo": "Colonia",
+    "nom": "San Pedro Barrientos",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54010",
+    "km": 4.3,
+    "tipo": "Fraccionamiento",
+    "nom": "Valle Hermoso",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54010",
+    "km": 5.0,
+    "tipo": "Colonia",
+    "nom": "21 de Marzo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54010",
+    "km": 5.5,
+    "tipo": "Unidad habitacional",
+    "nom": "Barrientos Gustavo Baz",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54015",
+    "km": 6.1,
+    "tipo": "Condominio",
+    "nom": "Conjunto Urbano Terraze",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54015",
+    "km": 5.8,
+    "tipo": "Zona industrial",
+    "nom": "Barrientos",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54016",
+    "km": 5.4,
+    "tipo": "Unidad habitacional",
+    "nom": "José María Velasco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54017",
+    "km": 4.7,
+    "tipo": "Zona industrial",
+    "nom": "Niños Héroes",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54017",
+    "km": 4.9,
+    "tipo": "Fraccionamiento",
+    "nom": "Comunidad Betania",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54020",
+    "km": 2.5,
+    "tipo": "Colonia",
+    "nom": "Benito Juárez (Tequex.)",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54020",
+    "km": 3.1,
+    "tipo": "Fraccionamiento",
+    "nom": "El Dorado",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54020",
+    "km": 2.2,
+    "tipo": "Fraccionamiento",
+    "nom": "La Joya Chica",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54020",
+    "km": 3.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas Boulevares",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54020",
+    "km": 2.4,
+    "tipo": "Colonia",
+    "nom": "Tequexquinahuac Parte Alta",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54020",
+    "km": 4.0,
+    "tipo": "Fraccionamiento",
+    "nom": "Valle Dorado",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54020",
+    "km": 2.1,
+    "tipo": "Unidad habitacional",
+    "nom": "Condominio Tequexquináhuac",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54020",
+    "km": 2.3,
+    "tipo": "Pueblo",
+    "nom": "Tequexquináhuac",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54020",
+    "km": 3.3,
+    "tipo": "Conjunto habitacional",
+    "nom": "El Gran Dorado",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54021",
+    "km": 3.9,
+    "tipo": "Colonia",
+    "nom": "Loma Azul",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54022",
+    "km": 4.1,
+    "tipo": "Colonia",
+    "nom": "Robles Patera",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54023",
+    "km": 4.9,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas de Valle Dorado",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54023",
+    "km": 4.6,
+    "tipo": "Colonia",
+    "nom": "Lomas de Atlaco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54023",
+    "km": 5.3,
+    "tipo": "Fraccionamiento",
+    "nom": "Los Pirules Ampliación",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54023",
+    "km": 4.8,
+    "tipo": "Colonia",
+    "nom": "Lomas Tulpan",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54025",
+    "km": 5.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Cumbres del Valle",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54026",
+    "km": 6.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Las Arboledas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54028",
+    "km": 6.4,
+    "tipo": "Fraccionamiento",
+    "nom": "Laderas de San Javier",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54030",
+    "km": 3.2,
+    "tipo": "Zona industrial",
+    "nom": "Centro Industrial Tlalnepantla",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54030",
+    "km": 3.5,
+    "tipo": "Zona industrial",
+    "nom": "Tlaxcopan",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54030",
+    "km": 2.9,
+    "tipo": "Fraccionamiento",
+    "nom": "La Romana",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54030",
+    "km": 3.4,
+    "tipo": "Colonia",
+    "nom": "La Nueva Ferrocarrilera",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54030",
+    "km": 3.0,
+    "tipo": "Zona industrial",
+    "nom": "San Nicolás",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54030",
+    "km": 2.8,
+    "tipo": "Fraccionamiento",
+    "nom": "San Javier",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54030",
+    "km": 3.1,
+    "tipo": "Unidad habitacional",
+    "nom": "IMSS Tlalnepantla",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54030",
+    "km": 3.3,
+    "tipo": "Unidad habitacional",
+    "nom": "Jesús García Corona",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54030",
+    "km": 2.7,
+    "tipo": "Colonia",
+    "nom": "Ampliación San Javier",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54033",
+    "km": 4.2,
+    "tipo": "Zona industrial",
+    "nom": "San Lorenzo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54033",
+    "km": 4.0,
+    "tipo": "Colonia",
+    "nom": "La Ferrocarrilera El Hoyo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54037",
+    "km": 4.8,
+    "tipo": "Colonia",
+    "nom": "El Triángulo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54038",
+    "km": 6.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Rivera del Bosque",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54040",
+    "km": 3.6,
+    "tipo": "Colonia",
+    "nom": "Lomas de San Andrés Atenco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54040",
+    "km": 4.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Los Pirules",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54040",
+    "km": 4.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Rincón del Valle",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54040",
+    "km": 3.8,
+    "tipo": "Pueblo",
+    "nom": "San Andrés Atenco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54040",
+    "km": 4.4,
+    "tipo": "Fraccionamiento",
+    "nom": "Valle de los Pinos 1ra. Sección",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54040",
+    "km": 4.0,
+    "tipo": "Fraccionamiento",
+    "nom": "Valle Verde",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54040",
+    "km": 3.9,
+    "tipo": "Colonia",
+    "nom": "Leandro Valle",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54040",
+    "km": 3.7,
+    "tipo": "Colonia",
+    "nom": "Lomas de San Andrés Atenco Ampliación",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54040",
+    "km": 3.8,
+    "tipo": "Colonia",
+    "nom": "San Andrés Atenco Ampliación",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54049",
+    "km": 7.1,
+    "tipo": "Colonia",
+    "nom": "Balcones del Valle",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54050",
+    "km": 5.4,
+    "tipo": "Fraccionamiento",
+    "nom": "Bosques de México",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54050",
+    "km": 5.0,
+    "tipo": "Colonia",
+    "nom": "Ex-Hacienda de Santa Mónica",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54050",
+    "km": 5.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Jacarandas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54050",
+    "km": 5.9,
+    "tipo": "Fraccionamiento",
+    "nom": "Jacarandas Ampliación",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54050",
+    "km": 5.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Jardines de Santa Mónica",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54050",
+    "km": 5.6,
+    "tipo": "Fraccionamiento",
+    "nom": "Las Margaritas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54050",
+    "km": 6.1,
+    "tipo": "Fraccionamiento",
+    "nom": "Magisterial Vista Bella",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54050",
+    "km": 5.7,
+    "tipo": "Fraccionamiento",
+    "nom": "Margaritas Ampliación",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54054",
+    "km": 7.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Bellavista Satélite",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54054",
+    "km": 7.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Jardines Bellavista",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54054",
+    "km": 7.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Residencial Privanza",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54054",
+    "km": 7.3,
+    "tipo": "Fraccionamiento",
+    "nom": "Rincón de Bella Vista",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54054",
+    "km": 8.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Club de Golf Bellavista",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54055",
+    "km": 5.1,
+    "tipo": "Pueblo",
+    "nom": "San Lucas Tepetlacalco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54055",
+    "km": 5.3,
+    "tipo": "Colonia",
+    "nom": "San Lucas Tepetlacalco Ampliación",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54057",
+    "km": 6.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Valle de Santa Mónica",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54059",
+    "km": 4.3,
+    "tipo": "Colonia",
+    "nom": "Francisco Villa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54060",
+    "km": 4.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Electra",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54060",
+    "km": 3.8,
+    "tipo": "Pueblo",
+    "nom": "La Loma",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54060",
+    "km": 4.3,
+    "tipo": "Fraccionamiento",
+    "nom": "Arcos Electra",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54060",
+    "km": 4.5,
+    "tipo": "Colonia",
+    "nom": "Miguel Hidalgo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54060",
+    "km": 3.9,
+    "tipo": "Zona industrial",
+    "nom": "La Loma",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54060",
+    "km": 4.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Valle del Paraíso",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54060",
+    "km": 4.6,
+    "tipo": "Fraccionamiento",
+    "nom": "Viveros del Río",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54060",
+    "km": 4.9,
+    "tipo": "Fraccionamiento",
+    "nom": "Viveros del Valle",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54060",
+    "km": 5.1,
+    "tipo": "Fraccionamiento",
+    "nom": "Valle de los Pinos 2da. Sección",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54060",
+    "km": 5.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Valle Sol",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54063",
+    "km": 5.0,
+    "tipo": "Fraccionamiento",
+    "nom": "Rinconada del Paraíso",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54067",
+    "km": 1.8,
+    "tipo": "Unidad habitacional",
+    "nom": "Tlalcalli",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54068",
+    "km": 2.2,
+    "tipo": "Colonia",
+    "nom": "Benito Juárez Centro",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54069",
+    "km": 1.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Las Rosas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54069",
+    "km": 1.6,
+    "tipo": "Colonia",
+    "nom": "Plaza de las Rosas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54070",
+    "km": 0.8,
+    "tipo": "Unidad habitacional",
+    "nom": "El Cortijo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54070",
+    "km": 1.2,
+    "tipo": "Zona industrial",
+    "nom": "San José Puente de Vigas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54070",
+    "km": 1.0,
+    "tipo": "Fraccionamiento",
+    "nom": "La Comunidad",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54070",
+    "km": 0.0,
+    "tipo": "Unidad habitacional",
+    "nom": "Adolfo López Mateos",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54070",
+    "km": 1.4,
+    "tipo": "Fraccionamiento",
+    "nom": "Rancho San Antonio",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54070",
+    "km": 1.1,
+    "tipo": "Colonia",
+    "nom": "Tlalnemex",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54073",
+    "km": 2.5,
+    "tipo": "Zona industrial",
+    "nom": "Los Reyes",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54075",
+    "km": 2.8,
+    "tipo": "Pueblo",
+    "nom": "Los Reyes",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54075",
+    "km": 3.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Los Reyes Ixtacala 2da. Sección",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54076",
+    "km": 2.4,
+    "tipo": "Unidad habitacional",
+    "nom": "Los Tejavanes",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54080",
+    "km": 1.9,
+    "tipo": "Colonia",
+    "nom": "Bellavista Puente de Vigas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54080",
+    "km": 3.8,
+    "tipo": "Colonia",
+    "nom": "El Mirador",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54080",
+    "km": 3.5,
+    "tipo": "Zona industrial",
+    "nom": "Las Armas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54080",
+    "km": 4.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Plazas de la Colina",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54080",
+    "km": 4.0,
+    "tipo": "Fraccionamiento",
+    "nom": "Residencias del Parque",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54080",
+    "km": 4.5,
+    "tipo": "Colonia",
+    "nom": "Vista Hermosa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54080",
+    "km": 4.7,
+    "tipo": "Fraccionamiento",
+    "nom": "Ampliación Vista Hermosa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54080",
+    "km": 5.1,
+    "tipo": "Fraccionamiento",
+    "nom": "Viveros de La Loma",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54080",
+    "km": 4.3,
+    "tipo": "Pueblo",
+    "nom": "Xocoyahualco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54080",
+    "km": 5.4,
+    "tipo": "Unidad habitacional",
+    "nom": "Condominios Villas Satélite",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54080",
+    "km": 4.1,
+    "tipo": "Fraccionamiento",
+    "nom": "Conjunto Pintores",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54080",
+    "km": 5.2,
+    "tipo": "Unidad habitacional",
+    "nom": "Tepetlacalco A. C.",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54080",
+    "km": 4.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Natura",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54080",
+    "km": 3.9,
+    "tipo": "Fraccionamiento",
+    "nom": "Real del Ocho",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 2.8,
+    "tipo": "Unidad habitacional",
+    "nom": "Rosario 1 Sector CROC II",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 2.9,
+    "tipo": "Unidad habitacional",
+    "nom": "Rosario 1 Sector CROC III-A",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 2.5,
+    "tipo": "Unidad habitacional",
+    "nom": "Hogares Ferrocarrileros",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 3.1,
+    "tipo": "Colonia",
+    "nom": "La Escuela",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 2.7,
+    "tipo": "Colonia",
+    "nom": "La Mora",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 2.4,
+    "tipo": "Fraccionamiento",
+    "nom": "Los Reyes Ixtacala 1ra. Secc.",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 1.9,
+    "tipo": "Pueblo",
+    "nom": "Puente de Vigas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 4.6,
+    "tipo": "Pueblo",
+    "nom": "San Jerónimo Tepetlacalco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 1.2,
+    "tipo": "Pueblo",
+    "nom": "San José Puente de Vigas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 3.8,
+    "tipo": "Pueblo",
+    "nom": "San Pablo Xalpa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 3.2,
+    "tipo": "Unidad habitacional",
+    "nom": "SEDENA",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 3.0,
+    "tipo": "Unidad habitacional",
+    "nom": "Rosario 1 Sector CROC VII",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 3.1,
+    "tipo": "Unidad habitacional",
+    "nom": "Rosario 1 Sector II-CA",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 3.2,
+    "tipo": "Unidad habitacional",
+    "nom": "Rosario 1 Sector II-CB",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 3.3,
+    "tipo": "Unidad habitacional",
+    "nom": "Rosario 1 Sector II-CD",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 3.4,
+    "tipo": "Unidad habitacional",
+    "nom": "Rosario 1 Sector III-A",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 3.5,
+    "tipo": "Unidad habitacional",
+    "nom": "Rosario 1 Sector III-B",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 3.6,
+    "tipo": "Unidad habitacional",
+    "nom": "Rosario 1 Sector III-C",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 4.4,
+    "tipo": "Zona industrial",
+    "nom": "San Jerónimo Tepetlacalco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 3.0,
+    "tipo": "Unidad habitacional",
+    "nom": "Los Cedros",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 2.1,
+    "tipo": "Zona industrial",
+    "nom": "Puente de Vigas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 3.5,
+    "tipo": "Unidad habitacional",
+    "nom": "Rosario I Sector CROC III B",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 2.9,
+    "tipo": "Unidad habitacional",
+    "nom": "Rosario II Sector I",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 3.1,
+    "tipo": "Unidad habitacional",
+    "nom": "Rosario II Sector II",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54090",
+    "km": 3.3,
+    "tipo": "Unidad habitacional",
+    "nom": "Rosario II Sector III",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54092",
+    "km": 3.7,
+    "tipo": "Unidad habitacional",
+    "nom": "Rosario 1 Sec. CROC V Bugamb.",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54092",
+    "km": 3.4,
+    "tipo": "Fraccionamiento",
+    "nom": "Rosario Ceylán",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54093",
+    "km": 3.8,
+    "tipo": "Unidad habitacional",
+    "nom": "Rosario II Gasera",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54094",
+    "km": 4.0,
+    "tipo": "Unidad habitacional",
+    "nom": "Rosario II Hipódromo Textil",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54098",
+    "km": 2.8,
+    "tipo": "Unidad habitacional",
+    "nom": "G. Baz Prada Los Reyes Ixtacala",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54100",
+    "km": 9.5,
+    "tipo": "Colonia",
+    "nom": "Las Palomas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54100",
+    "km": 8.8,
+    "tipo": "Pueblo",
+    "nom": "San Lucas Patoni",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54100",
+    "km": 9.2,
+    "tipo": "Unidad habitacional",
+    "nom": "Unidad CROC Solidaridad",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54108",
+    "km": 10.5,
+    "tipo": "Colonia",
+    "nom": "La Sideral",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54108",
+    "km": 10.1,
+    "tipo": "Colonia",
+    "nom": "Ampliación La Arboleda",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54109",
+    "km": 10.3,
+    "tipo": "Colonia",
+    "nom": "La Arboleda",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54110",
+    "km": 5.4,
+    "tipo": "Unidad habitacional",
+    "nom": "Unidad Barrientos",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54110",
+    "km": 11.2,
+    "tipo": "Colonia",
+    "nom": "El Olivo I",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54110",
+    "km": 4.1,
+    "tipo": "Colonia",
+    "nom": "Hogar Obrero",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54110",
+    "km": 4.5,
+    "tipo": "Colonia",
+    "nom": "Isidro Fabela",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54110",
+    "km": 3.8,
+    "tipo": "Colonia",
+    "nom": "La Blanca",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54110",
+    "km": 4.3,
+    "tipo": "Colonia",
+    "nom": "Reforma Urbana",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54110",
+    "km": 4.9,
+    "tipo": "Pueblo",
+    "nom": "Santa María Tlayacampa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54110",
+    "km": 4.0,
+    "tipo": "Colonia",
+    "nom": "Franja Municipal",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54110",
+    "km": 4.6,
+    "tipo": "Fraccionamiento",
+    "nom": "Nuevo México",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54110",
+    "km": 5.2,
+    "tipo": "Colonia",
+    "nom": "Lomas del Calvario",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54110",
+    "km": 2.5,
+    "tipo": "Colonia",
+    "nom": "Cooperativa La Romana",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54118",
+    "km": 5.3,
+    "tipo": "Colonia",
+    "nom": "Franja Férrea",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54119",
+    "km": 12.5,
+    "tipo": "Fraccionamiento",
+    "nom": "El Olivo II Parte Alta",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54119",
+    "km": 12.1,
+    "tipo": "Fraccionamiento",
+    "nom": "El Olivo II Parte Baja",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54120",
+    "km": 5.8,
+    "tipo": "Colonia",
+    "nom": "Gustavo Baz Prada",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54120",
+    "km": 6.1,
+    "tipo": "Colonia",
+    "nom": "Gustavo Baz Prada Amp.",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54120",
+    "km": 5.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Loma Bonita",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54120",
+    "km": 6.3,
+    "tipo": "Colonia",
+    "nom": "Los Parajes",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54120",
+    "km": 5.2,
+    "tipo": "Pueblo",
+    "nom": "San Rafael",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54120",
+    "km": 5.9,
+    "tipo": "Colonia",
+    "nom": "Tlayapa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54120",
+    "km": 5.4,
+    "tipo": "Colonia",
+    "nom": "Rancho San Rafael Amates",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54120",
+    "km": 5.3,
+    "tipo": "Fraccionamiento",
+    "nom": "San Rafael",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54120",
+    "km": 6.0,
+    "tipo": "Fraccionamiento",
+    "nom": "La Cañada",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54124",
+    "km": 6.8,
+    "tipo": "Colonia",
+    "nom": "Cuauhtémoc",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54126",
+    "km": 4.2,
+    "tipo": "Colonia",
+    "nom": "Tabla Honda",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54126",
+    "km": 4.0,
+    "tipo": "Zona industrial",
+    "nom": "Tabla Honda",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54126",
+    "km": 4.5,
+    "tipo": "Colonia",
+    "nom": "Río San Javier",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54127",
+    "km": 5.6,
+    "tipo": "Colonia",
+    "nom": "Ferrocarrilera San Rafael",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54128",
+    "km": 5.8,
+    "tipo": "Unidad habitacional",
+    "nom": "Condominios San Rafael",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54130",
+    "km": 6.5,
+    "tipo": "Colonia",
+    "nom": "El Rosal",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54130",
+    "km": 7.1,
+    "tipo": "Colonia",
+    "nom": "Ex Ejido de Santa Cecilia",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54130",
+    "km": 6.8,
+    "tipo": "Colonia",
+    "nom": "Independencia",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54130",
+    "km": 7.0,
+    "tipo": "Colonia",
+    "nom": "Independencia Ampliación",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54130",
+    "km": 6.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Izcalli del Río",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54130",
+    "km": 6.9,
+    "tipo": "Colonia",
+    "nom": "Los Ángeles",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54130",
+    "km": 7.4,
+    "tipo": "Fraccionamiento",
+    "nom": "Santa Cecilia",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54130",
+    "km": 7.2,
+    "tipo": "Pueblo",
+    "nom": "Santa Cecilia Acatitlán",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54130",
+    "km": 7.6,
+    "tipo": "Fraccionamiento",
+    "nom": "Valle de las Pirámides",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54130",
+    "km": 6.4,
+    "tipo": "Unidad habitacional",
+    "nom": "Jardines de la Cañada",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54130",
+    "km": 6.7,
+    "tipo": "Colonia",
+    "nom": "Media Luna",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54130",
+    "km": 7.3,
+    "tipo": "Unidad habitacional",
+    "nom": "Jardines Santa Cecilia",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54134",
+    "km": 7.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Jardines de Santa Cecilia",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54135",
+    "km": 8.1,
+    "tipo": "Zona industrial",
+    "nom": "San Buenaventura",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54136",
+    "km": 8.3,
+    "tipo": "Unidad habitacional",
+    "nom": "San Buenaventura",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54140",
+    "km": 6.8,
+    "tipo": "Colonia",
+    "nom": "El Puerto",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54140",
+    "km": 7.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Izcalli Acatitlán",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54140",
+    "km": 7.3,
+    "tipo": "Fraccionamiento",
+    "nom": "Izcalli Pirámide",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54140",
+    "km": 7.4,
+    "tipo": "Unidad habitacional",
+    "nom": "Izcalli Pirámide II",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54140",
+    "km": 6.9,
+    "tipo": "Colonia",
+    "nom": "La Cantera",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54140",
+    "km": 8.5,
+    "tipo": "Colonia",
+    "nom": "Ex-Ejido de San Lucas Patoni",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54140",
+    "km": 7.1,
+    "tipo": "Pueblo",
+    "nom": "San Miguel Chalma",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54140",
+    "km": 6.2,
+    "tipo": "Colonia",
+    "nom": "El Tenayo Centro",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54140",
+    "km": 6.4,
+    "tipo": "Colonia",
+    "nom": "El Tenayo Norte",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54140",
+    "km": 8.2,
+    "tipo": "Colonia",
+    "nom": "FFCC Cecilia Mora Vda. de Gómez",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54140",
+    "km": 6.3,
+    "tipo": "Colonia",
+    "nom": "El Tenayo Sur",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54142",
+    "km": 7.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Chalma La Unión",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54143",
+    "km": 8.0,
+    "tipo": "Fraccionamiento",
+    "nom": "Chalma La Barranca",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54145",
+    "km": 4.8,
+    "tipo": "Unidad habitacional",
+    "nom": "Tabla Honda",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54146",
+    "km": 5.2,
+    "tipo": "Colonia",
+    "nom": "La Cuchilla",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54147",
+    "km": 6.5,
+    "tipo": "Unidad habitacional",
+    "nom": "El Tenayo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54147",
+    "km": 6.7,
+    "tipo": "Unidad habitacional",
+    "nom": "Valle del Tenayo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54149",
+    "km": 6.1,
+    "tipo": "Fraccionamiento",
+    "nom": "Hugo Cervantes del Río",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54150",
+    "km": 7.4,
+    "tipo": "Colonia",
+    "nom": "Acueducto Tenayuca",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54150",
+    "km": 7.2,
+    "tipo": "Colonia",
+    "nom": "Ahuehuetes",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54150",
+    "km": 7.5,
+    "tipo": "Colonia",
+    "nom": "Arenal Tenayuca",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54150",
+    "km": 7.6,
+    "tipo": "Unidad habitacional",
+    "nom": "Loma Escondida",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54150",
+    "km": 7.3,
+    "tipo": "Pueblo",
+    "nom": "San Bartolo Tenayuca",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54150",
+    "km": 3.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Valle Ceylán",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54150",
+    "km": 4.0,
+    "tipo": "Fraccionamiento",
+    "nom": "Ampliación Valle Ceylán",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54152",
+    "km": 4.5,
+    "tipo": "Colonia",
+    "nom": "La Purísima",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54158",
+    "km": 8.4,
+    "tipo": "Colonia",
+    "nom": "Poder de Dios",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54160",
+    "km": 3.2,
+    "tipo": "Unidad habitacional",
+    "nom": "Artemisa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54160",
+    "km": 3.5,
+    "tipo": "Colonia",
+    "nom": "La Joya Ixtacala",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54160",
+    "km": 3.4,
+    "tipo": "Fraccionamiento",
+    "nom": "Miraflores",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54160",
+    "km": 3.3,
+    "tipo": "Fraccionamiento",
+    "nom": "Nueva Ixtacala",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54160",
+    "km": 3.6,
+    "tipo": "Unidad habitacional",
+    "nom": "P.I.P.S.A.",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54160",
+    "km": 3.8,
+    "tipo": "Colonia",
+    "nom": "Prado Ixtacala",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54160",
+    "km": 3.1,
+    "tipo": "Colonia",
+    "nom": "San Antonio Ixtacala",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54160",
+    "km": 3.2,
+    "tipo": "Colonia",
+    "nom": "San Felipe Ixtacala",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54160",
+    "km": 2.9,
+    "tipo": "Pueblo",
+    "nom": "San Juan Ixtacala",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54160",
+    "km": 3.0,
+    "tipo": "Unidad habitacional",
+    "nom": "El Tejocote",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54162",
+    "km": 3.5,
+    "tipo": "Colonia",
+    "nom": "Ceylán Ixtacala",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54168",
+    "km": 3.4,
+    "tipo": "Colonia",
+    "nom": "S. Juan Ixtacala Amp. Norte",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54170",
+    "km": 5.2,
+    "tipo": "Zona industrial",
+    "nom": "P. I. San Pablo Xalpa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54170",
+    "km": 6.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Prado Vallejo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54170",
+    "km": 4.8,
+    "tipo": "Colonia",
+    "nom": "Prensa Nacional",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54170",
+    "km": 5.4,
+    "tipo": "Colonia",
+    "nom": "Venustiano Carranza",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54170",
+    "km": 4.2,
+    "tipo": "Colonia",
+    "nom": "Bosques de Ceylán",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54172",
+    "km": 4.9,
+    "tipo": "Unidad habitacional",
+    "nom": "Ex Hacienda de En Medio",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54173",
+    "km": 4.6,
+    "tipo": "Unidad habitacional",
+    "nom": "Maravillas Ceylán",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54180",
+    "km": 18.5,
+    "tipo": "Colonia",
+    "nom": "Lomas de San Juan Ixhuatepec",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54180",
+    "km": 17.8,
+    "tipo": "Colonia",
+    "nom": "San José Ixhuatepec",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54180",
+    "km": 17.2,
+    "tipo": "Pueblo",
+    "nom": "San Juan Ixhuatepec",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54180",
+    "km": 17.5,
+    "tipo": "Colonia",
+    "nom": "Atrás del Tequiquil",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54187",
+    "km": 19.2,
+    "tipo": "Zona industrial",
+    "nom": "La Presa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54187",
+    "km": 18.8,
+    "tipo": "Colonia",
+    "nom": "Ecuestre Residencial S. José",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54187",
+    "km": 19.5,
+    "tipo": "Unidad habitacional",
+    "nom": "Magisterial Siglo XXI",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54189",
+    "km": 21.2,
+    "tipo": "Colonia",
+    "nom": "Lázaro Cárdenas 1ra. Secc.",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54189",
+    "km": 21.5,
+    "tipo": "Colonia",
+    "nom": "Lázaro Cárdenas 2da. Secc.",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54189",
+    "km": 21.8,
+    "tipo": "Colonia",
+    "nom": "Lázaro Cárdenas 3ra. Secc.",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54190",
+    "km": 18.2,
+    "tipo": "Colonia",
+    "nom": "FFCC Concepción Zepeda",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54190",
+    "km": 20.5,
+    "tipo": "Colonia",
+    "nom": "Constitución de 1917",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54190",
+    "km": 20.8,
+    "tipo": "Colonia",
+    "nom": "Constituyentes de 1857",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54190",
+    "km": 19.5,
+    "tipo": "Colonia",
+    "nom": "División del Norte",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54190",
+    "km": 20.1,
+    "tipo": "Colonia",
+    "nom": "Dr. Jorge Jiménez Cantú",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54190",
+    "km": 21.2,
+    "tipo": "Colonia",
+    "nom": "La Laguna",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54190",
+    "km": 20.8,
+    "tipo": "Colonia",
+    "nom": "Marina Nacional",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54190",
+    "km": 18.7,
+    "tipo": "Colonia",
+    "nom": "La Petrolera",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54193",
+    "km": 22.5,
+    "tipo": "Colonia",
+    "nom": "Ex-Ejido de Tepeolulco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54195",
+    "km": 19.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Santa Virginia",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54195",
+    "km": 19.6,
+    "tipo": "Fraccionamiento",
+    "nom": "Colinas de San José",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54196",
+    "km": 21.0,
+    "tipo": "Unidad habitacional",
+    "nom": "Bahía del Copal",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54196",
+    "km": 21.4,
+    "tipo": "Conjunto habitacional",
+    "nom": "Ángeles San José",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54197",
+    "km": 18.9,
+    "tipo": "Colonia",
+    "nom": "San Isidro Ixhuatepec",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54198",
+    "km": 21.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas de Lindavista Copal",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "54198",
+    "km": 20.3,
+    "tipo": "Fraccionamiento",
+    "nom": "Los Ángeles",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53000",
+    "km": 8.5,
+    "tipo": "Pueblo",
+    "nom": "San Bartolo Naucalpan",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53000",
+    "km": 8.8,
+    "tipo": "Colonia",
+    "nom": "Unidad Morelos",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53010",
+    "km": 7.9,
+    "tipo": "Fraccionamiento",
+    "nom": "Conjunto San Miguel",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53030",
+    "km": 9.2,
+    "tipo": "Colonia",
+    "nom": "Bosque de los Remedios",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53040",
+    "km": 8.1,
+    "tipo": "Fraccionamiento",
+    "nom": "Las Américas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53050",
+    "km": 7.4,
+    "tipo": "Fraccionamiento",
+    "nom": "El Mirador",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53060",
+    "km": 9.8,
+    "tipo": "Colonia",
+    "nom": "Loma Taurina",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53070",
+    "km": 9.5,
+    "tipo": "Colonia",
+    "nom": "Adolfo López Mateos",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53100",
+    "km": 6.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Ciudad Satélite",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53100",
+    "km": 6.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Club Cuicacalli",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53110",
+    "km": 7.5,
+    "tipo": "Pueblo",
+    "nom": "Santa Cruz del Monte",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53110",
+    "km": 7.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Fontana Residencial",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53110",
+    "km": 7.6,
+    "tipo": "Fraccionamiento",
+    "nom": "Bugambilias",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53115",
+    "km": 8.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas de Las Fuentes",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53116",
+    "km": 8.5,
+    "tipo": "Fraccionamiento",
+    "nom": "La Alteza",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53117",
+    "km": 8.9,
+    "tipo": "Fraccionamiento",
+    "nom": "El Sauzalito",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53117",
+    "km": 8.7,
+    "tipo": "Fraccionamiento",
+    "nom": "Cristóbal Colón",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53119",
+    "km": 7.9,
+    "tipo": "Fraccionamiento",
+    "nom": "Colonial Satélite",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53120",
+    "km": 9.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas Verdes 1a Sección",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53120",
+    "km": 9.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas Verdes (Conjunto)",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53124",
+    "km": 11.2,
+    "tipo": "Colonia",
+    "nom": "Bosque Alto",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53124",
+    "km": 10.5,
+    "tipo": "Unidad habitacional",
+    "nom": "Petroquímica Lomas Verdes",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53124",
+    "km": 11.5,
+    "tipo": "Colonia",
+    "nom": "La Cuspide",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53125",
+    "km": 10.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas Verdes 3a Sección",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53125",
+    "km": 11.3,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas Verdes 4a Sección",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53126",
+    "km": 12.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas Verdes 5a (Concordia)",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53126",
+    "km": 13.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas Verdes 6a Sección",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53126",
+    "km": 11.8,
+    "tipo": "Colonia",
+    "nom": "El Cristo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53127",
+    "km": 9.2,
+    "tipo": "Fraccionamiento",
+    "nom": "La Alteña I",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53127",
+    "km": 9.4,
+    "tipo": "Fraccionamiento",
+    "nom": "La Alteña II",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53127",
+    "km": 9.6,
+    "tipo": "Fraccionamiento",
+    "nom": "La Alteña III",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53127",
+    "km": 10.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas de Santa Cruz",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53128",
+    "km": 9.0,
+    "tipo": "Colonia",
+    "nom": "Conjunto la Ronda",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53128",
+    "km": 9.3,
+    "tipo": "Fraccionamiento",
+    "nom": "Residencial Santa Cruz",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53129",
+    "km": 7.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Jardines de Satélite",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53129",
+    "km": 7.8,
+    "tipo": "Unidad habitacional",
+    "nom": "Telefonistas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53130",
+    "km": 6.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Jardines de la Florida",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53138",
+    "km": 5.9,
+    "tipo": "Colonia",
+    "nom": "Hacienda de Cristo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53140",
+    "km": 8.1,
+    "tipo": "Fraccionamiento",
+    "nom": "Boulevares",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53140",
+    "km": 8.3,
+    "tipo": "Fraccionamiento",
+    "nom": "Misiones",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53140",
+    "km": 8.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Ampliación Misiones",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53140",
+    "km": 8.0,
+    "tipo": "Fraccionamiento",
+    "nom": "Jardines de Boulevares",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53150",
+    "km": 6.9,
+    "tipo": "Pueblo",
+    "nom": "Santa Cruz Acatlán",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53160",
+    "km": 6.1,
+    "tipo": "Fraccionamiento",
+    "nom": "La Florida",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53170",
+    "km": 10.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Loma de Cristy",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53177",
+    "km": 10.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Rinconada Diligencias",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53178",
+    "km": 11.4,
+    "tipo": "Fraccionamiento",
+    "nom": "La Soledad",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53200",
+    "km": 12.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas de San Mateo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53200",
+    "km": 13.0,
+    "tipo": "Fraccionamiento",
+    "nom": "La Atalaya",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53215",
+    "km": 14.2,
+    "tipo": "Colonia",
+    "nom": "Casas Viejas (La Era)",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53215",
+    "km": 13.5,
+    "tipo": "Fraccionamiento",
+    "nom": "La Huerta San Mateo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53215",
+    "km": 13.8,
+    "tipo": "Fraccionamiento",
+    "nom": "La Barranquilla",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53216",
+    "km": 22.5,
+    "tipo": "Pueblo",
+    "nom": "Santiago Tepatlaxco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53217",
+    "km": 15.2,
+    "tipo": "Colonia",
+    "nom": "La Presa (Tejocote)",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53217",
+    "km": 15.5,
+    "tipo": "Colonia",
+    "nom": "El Tejocote 2da. Sección",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53217",
+    "km": 15.0,
+    "tipo": "Colonia",
+    "nom": "El Tejocote",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53217",
+    "km": 15.8,
+    "tipo": "Colonia",
+    "nom": "Ejido del Tejocote",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53218",
+    "km": 13.5,
+    "tipo": "Colonia",
+    "nom": "Colinas de San Mateo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53218",
+    "km": 13.8,
+    "tipo": "Colonia",
+    "nom": "Rancho Colorado",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53219",
+    "km": 16.2,
+    "tipo": "Colonia",
+    "nom": "Rincón Verde",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53220",
+    "km": 11.5,
+    "tipo": "Pueblo",
+    "nom": "San Mateo Nopala",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53220",
+    "km": 12.2,
+    "tipo": "Colonia",
+    "nom": "Rinconada de los Parques",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53220",
+    "km": 11.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Rincón de Las Fuentes",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53220",
+    "km": 12.0,
+    "tipo": "Fraccionamiento",
+    "nom": "Real San Mateo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53220",
+    "km": 12.4,
+    "tipo": "Fraccionamiento",
+    "nom": "La Joya II",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53220",
+    "km": 12.3,
+    "tipo": "Fraccionamiento",
+    "nom": "La Joya I",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53220",
+    "km": 12.5,
+    "tipo": "Fraccionamiento",
+    "nom": "La Joyita",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53224",
+    "km": 12.8,
+    "tipo": "Colonia",
+    "nom": "San Mateo Nopala Norte",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53227",
+    "km": 13.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Izcalli San Mateo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53227",
+    "km": 13.5,
+    "tipo": "Colonia",
+    "nom": "San Mateo Nopala Sur",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53227",
+    "km": 13.1,
+    "tipo": "Fraccionamiento",
+    "nom": "Rinconada San Mateo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53227",
+    "km": 14.0,
+    "tipo": "Colonia",
+    "nom": "Cumbres de San Mateo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53227",
+    "km": 13.6,
+    "tipo": "Fraccionamiento",
+    "nom": "Pedregal de San Mateo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53228",
+    "km": 14.2,
+    "tipo": "Colonia",
+    "nom": "Praderas de San Mateo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53228",
+    "km": 14.5,
+    "tipo": "Colonia",
+    "nom": "Santa Rosa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53228",
+    "km": 14.8,
+    "tipo": "Colonia",
+    "nom": "La Luna",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53228",
+    "km": 14.1,
+    "tipo": "Fraccionamiento",
+    "nom": "El Risco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53228",
+    "km": 14.6,
+    "tipo": "Fraccionamiento",
+    "nom": "Laderas de la Colmena",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53228",
+    "km": 14.3,
+    "tipo": "Fraccionamiento",
+    "nom": "Los Emperadores",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 16.5,
+    "tipo": "Ejido",
+    "nom": "Bellavista",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 16.2,
+    "tipo": "Colonia",
+    "nom": "Las Ánimas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 15.9,
+    "tipo": "Colonia",
+    "nom": "Pinos II",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 16.8,
+    "tipo": "Colonia",
+    "nom": "Jardines Ojo de Agua",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 17.2,
+    "tipo": "Colonia",
+    "nom": "Puente de Piedra",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 17.5,
+    "tipo": "Colonia",
+    "nom": "El Cobradero",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 17.8,
+    "tipo": "Barrio",
+    "nom": "Cipreses",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 17.0,
+    "tipo": "Colonia",
+    "nom": "El Puerto",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 16.6,
+    "tipo": "Colonia",
+    "nom": "El Chabacano",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 18.0,
+    "tipo": "Barrio",
+    "nom": "Las Arenillas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 16.3,
+    "tipo": "Colonia",
+    "nom": "Córdoba",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 16.1,
+    "tipo": "Colonia",
+    "nom": "La Rosa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 16.4,
+    "tipo": "Colonia",
+    "nom": "La Hiedra",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 17.3,
+    "tipo": "Barrio",
+    "nom": "Juan Gómez",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 16.9,
+    "tipo": "Colonia",
+    "nom": "La Cuesta",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 17.7,
+    "tipo": "Barrio",
+    "nom": "Las Peñitas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 17.9,
+    "tipo": "Barrio",
+    "nom": "Tito",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 18.2,
+    "tipo": "Barrio",
+    "nom": "Agua Buena",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53229",
+    "km": 18.5,
+    "tipo": "Barrio",
+    "nom": "Rancho Viejo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53230",
+    "km": 11.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Los Álamos",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53237",
+    "km": 10.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Los Fresnos",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53239",
+    "km": 11.0,
+    "tipo": "Fraccionamiento",
+    "nom": "Ampliación Los Fresnos",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53240",
+    "km": 10.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Jardines de San Mateo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53240",
+    "km": 10.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Alcanfores",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53240",
+    "km": 10.1,
+    "tipo": "Fraccionamiento",
+    "nom": "Prado San Mateo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53240",
+    "km": 10.3,
+    "tipo": "Fraccionamiento",
+    "nom": "Valle de San Mateo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53247",
+    "km": 11.5,
+    "tipo": "Colonia",
+    "nom": "Lomas de Occipaco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53248",
+    "km": 12.0,
+    "tipo": "Fraccionamiento",
+    "nom": "Laderas de San Mateo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53250",
+    "km": 10.5,
+    "tipo": "Pueblo",
+    "nom": "Santiago Occipaco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53250",
+    "km": 10.8,
+    "tipo": "Fraccionamiento",
+    "nom": "La Palma",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53260",
+    "km": 12.4,
+    "tipo": "Colonia",
+    "nom": "México 68",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53270",
+    "km": 9.5,
+    "tipo": "Pueblo",
+    "nom": "San Juan Totoltepec",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53270",
+    "km": 9.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Las Papas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53278",
+    "km": 11.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Izcalli del Bosque",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53279",
+    "km": 10.9,
+    "tipo": "Colonia",
+    "nom": "Bosques de Moctezuma",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53279",
+    "km": 11.5,
+    "tipo": "Colonia",
+    "nom": "Tercer Mundo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53280",
+    "km": 10.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Ciudad Brisa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53283",
+    "km": 11.0,
+    "tipo": "Fraccionamiento",
+    "nom": "Pedregal de Echegaray",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53283",
+    "km": 11.3,
+    "tipo": "Fraccionamiento",
+    "nom": "Tiahui",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53290",
+    "km": 12.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Balcones de San Mateo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53290",
+    "km": 12.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Vista Valle Electricistas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53296",
+    "km": 12.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Vista del Valle II, III, IV y IX",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53296",
+    "km": 12.4,
+    "tipo": "Fraccionamiento",
+    "nom": "Xalpa de La Huerta",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53296",
+    "km": 13.0,
+    "tipo": "Fraccionamiento",
+    "nom": "Vista del Valle Sec. Bosques",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53297",
+    "km": 14.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Paseos del Bosque",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53297",
+    "km": 11.5,
+    "tipo": "Colonia",
+    "nom": "Ex-Ejido Santiago Occipaco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53298",
+    "km": 13.5,
+    "tipo": "Colonia",
+    "nom": "Cumbres de Himalaya",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53300",
+    "km": 4.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Colón Echegaray",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53300",
+    "km": 5.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Hacienda de Echegaray",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53309",
+    "km": 5.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Rincón Echegaray",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53310",
+    "km": 5.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Bosque de Echegaray",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53310",
+    "km": 6.1,
+    "tipo": "Fraccionamiento",
+    "nom": "B. de Echegaray (Electricistas)",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53320",
+    "km": 5.0,
+    "tipo": "Colonia",
+    "nom": "Diez de Abril",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53329",
+    "km": 5.4,
+    "tipo": "Fraccionamiento",
+    "nom": "Rivera de Echegaray",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53330",
+    "km": 6.2,
+    "tipo": "Colonia",
+    "nom": "Cervecera Modelo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53338",
+    "km": 7.5,
+    "tipo": "Pueblo",
+    "nom": "Santa María Nativitas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53338",
+    "km": 7.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Conjunto la Huerta",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53339",
+    "km": 6.4,
+    "tipo": "Fraccionamiento",
+    "nom": "Rincón del Bosque de Echegaray",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53340",
+    "km": 6.9,
+    "tipo": "Fraccionamiento",
+    "nom": "La Perla",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53340",
+    "km": 7.3,
+    "tipo": "Fraccionamiento",
+    "nom": "Los Pastores",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53348",
+    "km": 7.1,
+    "tipo": "Zona industrial",
+    "nom": "Industrial La Perla",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53350",
+    "km": 8.2,
+    "tipo": "Colonia",
+    "nom": "Rancho Atenco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53370",
+    "km": 7.8,
+    "tipo": "Zona industrial",
+    "nom": "Industrial Alce Blanco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53370",
+    "km": 8.5,
+    "tipo": "Zona industrial",
+    "nom": "Naucalpan",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53378",
+    "km": 10.2,
+    "tipo": "Colonia",
+    "nom": "Ahuizotla",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53390",
+    "km": 9.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas de Sotelo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53398",
+    "km": 9.5,
+    "tipo": "Fraccionamiento",
+    "nom": "El Parque",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53400",
+    "km": 10.5,
+    "tipo": "Pueblo",
+    "nom": "Los Remedios",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53410",
+    "km": 11.2,
+    "tipo": "Colonia",
+    "nom": "Ampliación Los Remedios",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53410",
+    "km": 10.8,
+    "tipo": "Colonia",
+    "nom": "Padre Figueroa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53410",
+    "km": 11.5,
+    "tipo": "Colonia",
+    "nom": "Unión Popular",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53420",
+    "km": 12.2,
+    "tipo": "Colonia",
+    "nom": "Loma Colorada 1ra. Sección",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53425",
+    "km": 12.5,
+    "tipo": "Colonia",
+    "nom": "La Universal",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53425",
+    "km": 12.8,
+    "tipo": "Colonia",
+    "nom": "El Corralito",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53426",
+    "km": 14.2,
+    "tipo": "Pueblo",
+    "nom": "San Lorenzo Totolinga",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53426",
+    "km": 13.5,
+    "tipo": "Colonia",
+    "nom": "Emiliano Zapata",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53426",
+    "km": 14.5,
+    "tipo": "Colonia",
+    "nom": "La Cañada",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53426",
+    "km": 14.0,
+    "tipo": "Colonia",
+    "nom": "La Raquelito",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53426",
+    "km": 14.8,
+    "tipo": "Colonia",
+    "nom": "Cuartos II 1a Sección",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53426",
+    "km": 15.2,
+    "tipo": "Colonia",
+    "nom": "Cuartos III",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53427",
+    "km": 13.0,
+    "tipo": "Colonia",
+    "nom": "Las Huertas 1a Secc",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53427",
+    "km": 13.4,
+    "tipo": "Colonia",
+    "nom": "Las Huertas 2a Sección",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53427",
+    "km": 13.8,
+    "tipo": "Colonia",
+    "nom": "Las Huertas 3a Sección",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53427",
+    "km": 13.2,
+    "tipo": "Colonia",
+    "nom": "Luisa Isabel Campos",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53427",
+    "km": 12.6,
+    "tipo": "Colonia",
+    "nom": "Loma Colorada 2da. Sección",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53427",
+    "km": 13.1,
+    "tipo": "Colonia",
+    "nom": "El Porvenir",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53427",
+    "km": 12.9,
+    "tipo": "Colonia",
+    "nom": "Lomas de los Remedios",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53427",
+    "km": 13.7,
+    "tipo": "Colonia",
+    "nom": "Las Caballerizas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53428",
+    "km": 14.5,
+    "tipo": "Colonia",
+    "nom": "México 86",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53430",
+    "km": 11.5,
+    "tipo": "Colonia",
+    "nom": "Los Arcos",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53430",
+    "km": 11.2,
+    "tipo": "Colonia",
+    "nom": "Reubicación el Torito",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53440",
+    "km": 10.2,
+    "tipo": "Colonia",
+    "nom": "Sierra Nevada",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53440",
+    "km": 10.5,
+    "tipo": "Unidad habitacional",
+    "nom": "Unión Popular",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53440",
+    "km": 10.9,
+    "tipo": "Colonia",
+    "nom": "Predio el Zapote",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53450",
+    "km": 11.8,
+    "tipo": "Colonia",
+    "nom": "Ciudad de los Niños",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53458",
+    "km": 11.2,
+    "tipo": "Unidad habitacional",
+    "nom": "Bosque de los Remedios",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53459",
+    "km": 12.0,
+    "tipo": "Colonia",
+    "nom": "Ampliación Ciudad de los Niños",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53460",
+    "km": 11.2,
+    "tipo": "Colonia",
+    "nom": "Barrio el Torito",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53460",
+    "km": 11.5,
+    "tipo": "Colonia",
+    "nom": "La Rivera",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53460",
+    "km": 11.0,
+    "tipo": "Fraccionamiento",
+    "nom": "Los Arcos",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53470",
+    "km": 11.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Loma de Canteras",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53489",
+    "km": 10.5,
+    "tipo": "Zona industrial",
+    "nom": "P. I. Naucalpan",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53490",
+    "km": 13.8,
+    "tipo": "Colonia",
+    "nom": "Lomas de San Agustín",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53490",
+    "km": 14.2,
+    "tipo": "Colonia",
+    "nom": "Santa Lilia Chamapa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53490",
+    "km": 14.5,
+    "tipo": "Colonia",
+    "nom": "Las Tinajas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53500",
+    "km": 7.8,
+    "tipo": "Colonia",
+    "nom": "El Conde",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53500",
+    "km": 7.5,
+    "tipo": "Colonia",
+    "nom": "San Andrés Atoto",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53519",
+    "km": 7.2,
+    "tipo": "Zona industrial",
+    "nom": "Industrial Atoto",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53520",
+    "km": 8.5,
+    "tipo": "Colonia",
+    "nom": "El Olivar",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53520",
+    "km": 8.8,
+    "tipo": "Colonia",
+    "nom": "Rosa de Castilla",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53529",
+    "km": 7.1,
+    "tipo": "Zona industrial",
+    "nom": "Industrial Tlatilco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53530",
+    "km": 9.2,
+    "tipo": "Colonia",
+    "nom": "El Molinito",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53530",
+    "km": 9.0,
+    "tipo": "Fraccionamiento",
+    "nom": "Jardines del Molinito",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53533",
+    "km": 10.8,
+    "tipo": "Equipamiento",
+    "nom": "Campo Militar 1",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53550",
+    "km": 9.5,
+    "tipo": "Colonia",
+    "nom": "Ampliación San Esteban",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53550",
+    "km": 9.2,
+    "tipo": "Pueblo",
+    "nom": "San Esteban Huitzilacasco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53560",
+    "km": 10.3,
+    "tipo": "Colonia",
+    "nom": "Lázaro Cárdenas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53569",
+    "km": 9.1,
+    "tipo": "Pueblo",
+    "nom": "San Francisco Cuautlalpan",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53570",
+    "km": 9.8,
+    "tipo": "Colonia",
+    "nom": "La Cañada",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53570",
+    "km": 10.5,
+    "tipo": "Colonia",
+    "nom": "San Antonio Zomeyucan",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53580",
+    "km": 11.2,
+    "tipo": "Colonia",
+    "nom": "Loma Linda",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53580",
+    "km": 10.8,
+    "tipo": "Pueblo",
+    "nom": "San Luís Tlatilco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53598",
+    "km": 11.5,
+    "tipo": "Colonia",
+    "nom": "Estado de México (Tambor)",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53640",
+    "km": 15.8,
+    "tipo": "Colonia",
+    "nom": "Nueva San Rafael",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53640",
+    "km": 16.5,
+    "tipo": "Colonia",
+    "nom": "Bosques de Chamapa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53650",
+    "km": 21.5,
+    "tipo": "Pueblo",
+    "nom": "San Francisco Chimalpa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53650",
+    "km": 22.2,
+    "tipo": "Barrio",
+    "nom": "San Miguel Dextha",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53650",
+    "km": 23.0,
+    "tipo": "Barrio",
+    "nom": "Mojonera / Dudy / Chixtu",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53650",
+    "km": 24.5,
+    "tipo": "Barrio",
+    "nom": "La Cañada de Boche",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53650",
+    "km": 22.8,
+    "tipo": "Barrio",
+    "nom": "Cielito / La Mora",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53650",
+    "km": 25.2,
+    "tipo": "Barrio",
+    "nom": "Yongua / Boxisda",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53650",
+    "km": 24.1,
+    "tipo": "Barrio",
+    "nom": "Arenillas / Las Cruces",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53650",
+    "km": 25.8,
+    "tipo": "Barrio",
+    "nom": "Tres Piedras / Batha",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53650",
+    "km": 26.5,
+    "tipo": "Barrio",
+    "nom": "Las Mesas / Gora",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53650",
+    "km": 24.9,
+    "tipo": "Barrio",
+    "nom": "Juando / Depeny",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53650",
+    "km": 25.5,
+    "tipo": "Barrio",
+    "nom": "Shido / Dongu / Xoyu",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53650",
+    "km": 27.2,
+    "tipo": "Barrio",
+    "nom": "Bandhi / Trenzonas",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53658",
+    "km": 19.8,
+    "tipo": "Barrio",
+    "nom": "La Cebada",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53658",
+    "km": 20.5,
+    "tipo": "Colonia",
+    "nom": "Minas del Tecolote",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53658",
+    "km": 21.2,
+    "tipo": "Colonia",
+    "nom": "Las Torres / La Palma",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53658",
+    "km": 21.5,
+    "tipo": "Barrio",
+    "nom": "Llano de las Flores",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53659",
+    "km": 28.4,
+    "tipo": "Fraccionamiento",
+    "nom": "Villa Alpina",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53659",
+    "km": 24.2,
+    "tipo": "Barrio",
+    "nom": "San Miguel Dorami",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53660",
+    "km": 14.8,
+    "tipo": "Pueblo",
+    "nom": "San Rafael Chamapa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53664",
+    "km": 15.2,
+    "tipo": "Colonia",
+    "nom": "Chamapa (Tabiqueras 2-8)",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53689",
+    "km": 13.5,
+    "tipo": "Colonia",
+    "nom": "Izcalli Chamapa",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53690",
+    "km": 14.1,
+    "tipo": "Colonia",
+    "nom": "Olimpiada 68 / Valle Dorado",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53696",
+    "km": 15.5,
+    "tipo": "Colonia",
+    "nom": "Mina Palacios",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53697",
+    "km": 15.8,
+    "tipo": "Colonia",
+    "nom": "El Capulín / 3 de Mayo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53698",
+    "km": 14.5,
+    "tipo": "Colonia",
+    "nom": "Olímpica Radio / Poza Honda",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53700",
+    "km": 11.2,
+    "tipo": "Colonia",
+    "nom": "Altamira",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53710",
+    "km": 12.8,
+    "tipo": "Colonia",
+    "nom": "Plan de Ayala",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53714",
+    "km": 13.5,
+    "tipo": "Colonia",
+    "nom": "La Mancha III",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53717",
+    "km": 13.2,
+    "tipo": "Colonia",
+    "nom": "La Mancha I y II",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53719",
+    "km": 13.9,
+    "tipo": "Colonia",
+    "nom": "Lomas del Cadete",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53760",
+    "km": 12.5,
+    "tipo": "Colonia",
+    "nom": "San José de los Leones (1-3)",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53788",
+    "km": 10.8,
+    "tipo": "Colonia",
+    "nom": "La Tolva",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53790",
+    "km": 11.5,
+    "tipo": "Colonia",
+    "nom": "Benito Juárez",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53800",
+    "km": 14.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas del Río",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53810",
+    "km": 12.2,
+    "tipo": "Pueblo",
+    "nom": "San José Río Hondo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53840",
+    "km": 16.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas del Huizachal",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53900",
+    "km": 16.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas Hipódromo",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53910",
+    "km": 17.2,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas Manuel Ávila Camacho",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53930",
+    "km": 17.5,
+    "tipo": "Fraccionamiento",
+    "nom": "Country Club",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53950",
+    "km": 19.8,
+    "tipo": "Fraccionamiento",
+    "nom": "Lomas de Tecamachalco",
+    "riesgo": 1
+  },
+  {
+    "o": "54070",
+    "d": "53970",
+    "km": 20.5,
+    "tipo": "Pueblo",
+    "nom": "San Miguel Tecamachalco",
+    "riesgo": 1
+  }
+]
