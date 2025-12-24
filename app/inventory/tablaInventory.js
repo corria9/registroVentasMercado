@@ -2,38 +2,88 @@
 
 
 //const API_BASE_URL = "http://127.0.0.1:8000/api/v1/productos"; // LOCAL
-const API_BASE_URL = "https://armaly-backend-224984538456.us-central1.run.app/api/v1/productos"; // PRODUCCION
+const API_BASE_URL = "https://armaly-backend-224984538456.us-central1.run.app/api/v1/productos".trim(); // PRODUCCION
 // --- Funciones de Lógica de Datos ---
 
 /**
  * Obtiene la lista de productos desde la API de FastAPI.
  */
+ // Constante para el nombre del caché
+const CACHE_KEY = 'inventory_cache';
+
 async function fetchInventory() {
     try {
-        console.log("Cargando inventario desde la API...");
+        console.log("Intentando cargar inventario desde la API...");
+        // Usamos la global del HTML, si no existe, usamos una por defecto
+        const urlParaFetch = window.GLOBAL_API_BASE_URL || API_BASE_URL;
         
-        const response = await fetch(API_BASE_URL);
+        console.log("Conectando a:", urlParaFetch);
+        
+        const response = await fetch(urlParaFetch);
 
         if (!response.ok) {
-            throw new Error(`Error HTTP al cargar el inventario: ${response.status}`);
+            throw new Error(`Error HTTP: ${response.status}`);
         }
 
-        // 2. Rellenar el array global 'inventory'
         const data = await response.json();
+        
+        // Si tiene éxito, actualizamos el caché de LocalStorage
+        localStorage.setItem(CACHE_KEY, JSON.stringify(data));
         inventory = data; 
         
-        // 3. Renderizar la tabla con los datos
-        renderTable(); 
+        //console.log("✅ Inventario cargado desde API.");
+        // No ponemos toast aquí para que no moleste en cada carga inicial
+        showToast("✅ Inventario cargado con éxito", 'success');
 
-        console.log(`Inventario cargado exitosamente. Total de productos: ${inventory.length}`);
-        showToast("✅ Inventario cargado con éxito.", 'success');
     } catch (error) {
-        console.error("Fallo al obtener el inventario:", error);
-        // Implementar aquí una notificación para el usuario (ej: un toast)
+        console.warn("⚠️ La API falló o fue bloqueada. Buscando alternativas...");
+        
+        // 2. Intentar cargar desde el LocalStorage (Caché del navegador)
+        const cachedData = localStorage.getItem(CACHE_KEY);
+        
+        if (cachedData) {
+            inventory = JSON.parse(cachedData);
+            console.log("📦 Datos cargados desde Caché Local.");
+            showToast("⚠️ Modo offline: Usando datos guardados.", 'warning');
+        } 
+        else {
+            // 3. Si no hay caché (primera vez), intentar cargar el archivo JSON local
+            console.log("📁 Sin caché disponible. Intentando cargar backup.json...");
+            try {
+                // Asegúrate de que la ruta coincida con donde pongas tu archivo
+                const backupResponse = await fetch('app/inventory/backup.json');
+                if (backupResponse.ok) {
+                    inventory = await backupResponse.json();
+                    console.log("📂 Datos cargados desde archivo de respaldo JSON.");
+                    showToast("ℹ️ Cargados datos de respaldo.", 'info');
+                } else {
+                    throw new Error("No se encontró el archivo backup.json");
+                }
+            } catch (backupError) {
+                console.error("❌ Fallo total: API, Caché y Archivo local fallaron.");
+                showToast("❌ No se pudo cargar el inventario.", 'error');
+                inventory = []; 
+            }
+        }
+    } finally {
+        renderTable(); 
     }
 }
 
-
+/**
+ * Borra el caché local y fuerza una nueva petición a la API.
+ * Vinculada al botón "Actualizar Datos" en el HTML.
+ */
+ async function forceRefreshInventory() {
+    // Feedback visual inmediato
+    showToast("🔄 Sincronizando con el servidor...", 'info');
+    
+    // Limpiamos el caché de LocalStorage
+    localStorage.removeItem(CACHE_KEY);
+    
+    // Volvemos a llamar a la función principal
+    await fetchInventory();
+}
 // --- Funciones de Renderizado ---
 
 /**
@@ -44,9 +94,10 @@ function renderTable() {
     tbody.innerHTML = "";
 
     inventory.forEach(item => {
+        const secureImageUrl = item.imagen_url ? item.imagen_url.replace("http://", "https://") : null;
         // ⭐ CORRECCIÓN: Usamos 'imagen_url' que es el campo que devuelve FastAPI
-        const imageHtml = item.imagen_url 
-            ? `<img src="${item.imagen_url}" alt="${item.nombre}" class="w-12 h-12 object-cover rounded-md">`
+        const imageHtml = secureImageUrl // <--- Usa la variable sanitizada aquí
+            ? `<img src="${secureImageUrl}" alt="${item.nombre}" class="w-12 h-12 object-cover rounded-md">`
             : `<span class="text-gray-500 text-xs">No img</span>`;
         
         // Convertimos el objeto 'item' a JSON para pasarlo al modal
